@@ -1,0 +1,22 @@
+<!--pages/readmoney/readmoney.wxml-->
+<view class='homePage'>
+  <view class='top-padding'></view>
+  <view class='rm_th'>
+    <view class='title'>阅读币</view>
+    <view class='title text_center'>途径</view>
+    <view class='title text_right'>时间</view>
+  </view>
+  <view class='top-padding'></view>
+  <block wx:for="{{rd_data}}">
+    <view class='rm_tr'>
+      <block wx:if="{{item.add==1}}">
+        <view class='rm_td money_add '>+{{item.count}}</view>  
+      </block>
+      <block wx:if="{{item.add==0}}">
+        <view class='rm_td'>-{{item.count}}</view>
+      </block>     
+      <view class='rm_td text_center'>{{item.path}}</view>
+      <view class='rm_td text_right'>{{item.add_time}}</view>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,33 @@
+<!--pages/nearbybookcase/nearbybookcase.wxml-->
+
+  <view class='prompts' hidden='{{prompts_hidden}}'>您选的图书可在以下书栈中找到</view>
+  <block wx:for="{{bookcase_data}}">
+    <view class='bookcase_list border-bottom' bindtap='openbccontent' data-id='{{item.id}}'>
+      <image src='{{item.img}}' class='bookcase_img'></image>
+      <view class='bookcase_content bookcase_content_width'>
+        <view class='bookcase_name'>{{item.name}}</view>
+        <view class='bookcase_address'>  
+          <image src='../../images/sousuo-dingwei.png' class='data_icon'></image>
+          {{item.place}}
+          <image src='../../images/qianwnag2x.png' class='jinru'></image>
+        </view>
+        <view class='bookcase_other'>  
+          <view class='other_list'>
+            <image src='../../images/shuji3x.png' class='data_icon'></image>
+            {{item.count}}本
+          </view>
+          <view class='other_list'>
+            <image src='../../images/dingwei3x.png' class='data_icon'></image>
+            {{item.distance}}
+          </view>
+        </view>
+      </view>
+      <view class='is_bookcase'>
+        <block wx:if="{{item.type==1}}">
+          <image src='../../images/shujiao.png' class='is_bookcase'></image>
+        </block>
+      </view> 
+      <image src='../../images/qianwnag3.png' class='go_bookcase'></image>
+    </view>
+  </block>
+

@@ -1,0 +1,92 @@
+<!--pages/member_content/member_content.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class='homePage'>
+  <image class='member_banner' src='../../images/WechatIMG6.jpeg'></image>
+  <view class='banner-view' wx:if="{{userData.level!=0}}">
+    <view class='banner-title'>
+      {{userData.level_name}}会员
+    </view>
+    <view class='useful-time'>有效期</view>
+    <view class='useful-time'>{{userData.start_time}}至{{userData.end_time}}</view>
+  </view>
+  <view class='banner-view' wx:else>
+    <view class='banner-title'>
+      立即开通会员
+    </view>
+    <view class='banner-title'>
+      至尊优惠8折起
+    </view>
+  </view>
+  <view class='content_view'>
+    <view class='content_title'>
+      会员VIP<text class='is_member' hidden='{{!userData.is_member}}'> 您已是{{userData.level_name}}会员</text>
+    </view>
+    <scroll-view class='vip_type' scroll-x>
+      <view wx:for="{{vip_type}}" class='vip_btn {{item.choose}}' bindtap='choosevip' data-index='{{index}}' data-level='{{item.level}}'>
+        <view class='type_name'>{{item.level_name}}</view>
+        <view class='type_money'>￥{{item.level_price}}<text class='moeny_year'>/年</text></view>
+      </view>   
+    </scroll-view>
+    <!--输入兑换码-->
+    <view class='kaitong_btn' bindtap='eject'>输入兑换码</view>
+    <view class="model" catchtouchmove='preventTouchMove' wx:if='{{showModal}}'></view>
+    <view class="modalDlg" catchtouchmove='preventTouchMove' wx:if='{{showModal}}'>
+      <view class='windowRow'>
+        <text class='userTitle'>输入兑换码</text>
+        <view class='back' bindtap='back'>关闭
+        </view>
+      </view>
+      <view class='wishName'>
+        <input auto-focus='true' bindinput='wish_put' placeholder='请输入输入兑换码' class='wish_put'></input>
+      </view>
+      <view class='wishbnt'>
+        <button class='wishbnt_bt' bindtap='ok'>确定</button>
+      </view>
+    </view>
+    <view class='kaitong_btn' bindtap='showpay'>立即开通</view>
+  </view>
+  <view class='top-padding'></view>
+  <view class='content_view'>
+    <view class='content_title'>会员规则</view>
+    <view class='content_detile'>
+      <template is="wxParse" data="{{wxParseData:member_rule.nodes}}"/>
+      <!-- {{member_rule}} -->
+    </view>
+  </view>
+</view>
+<view class='sign_in_ok_bg' hidden='{{pay_hidden}}'>
+  <view class='member_goon' hidden='{{member_goon}}'>
+    <view class='goon_text'>
+      您已是{{userData.member_type}}会员，如购买{{pay_type}}则在{{userData.end}}日后生效，是否确认购买
+    </view>
+    <view class='goon_btn'>
+        <view class='btn goonyes' bindtap='yes_true'>是</view>
+        <view class='btn goonno' bindtap='hiddenpay'>否</view>
+    </view>
+  </view>
+  <view class='pay_type' hidden='{{yes_hidden}}'>
+    <view class='pay_close'>
+      <view class='pay_close_x' bindtap='hiddenpay'>x</view>
+    </view>
+    <radio-group class='pay_choose' bindchange="radioChange">
+      <view class='pay_choose_type'>
+        <image src='../../images/weixinzhifu2.png' class='pay_choose_icon'></image>
+        <view class='choose_content'>微信支付</view>
+        <radio class='choose_radio' color='#6658A6' value='0' checked='true'></radio>  
+      </view>
+      <view class='pay_choose_type mar-top'>
+        <image src='../../images/yuedubi2.png' class='pay_choose_icon'></image>
+        <view class='choose_content choose_content_text'>
+          您有{{integral_data.integral}}阅读币，满{{integral_data.man}}阅读币可用。\n{{integral_data.man}}阅读币可抵用
+          {{integral_data.di}}元
+        </view>
+        <radio class='choose_radio' color='#6658A6' value='1'></radio>
+      </view>
+    </radio-group>
+    <view class='now_pay' bindtap='openbecomemember'>
+      立即支付<text class='money'> ￥{{pay_money}}</text>
+    </view>
+  </view>
+  <!--输入兑换码-->
+
+</view>

@@ -1,0 +1,168 @@
+<!--pages/activity/activity.wxml-->
+<view class='homePage'>
+  <view class="searchBarContainer">
+    <view class="searchBar">
+      <image src='../../images/sousuo-dingwei2.png' class='didian_img'></image>
+      <text class='site_text'>{{currentCity}}</text>
+      <view class='text_place_holder text_place_holder_width'>
+        <input class="search-input input-width" placeholder='搜索精彩活动' placeholder-class='input-placeholder'
+        bindconfirm='searchact' bindinput='changesearchvalue'>
+        </input>    
+        <image src='../../images/sousuo3.png' class='search_img' bindtap='searchact'/>
+      </view>
+      <image src='../../images/saoma.png' class='saoma' bindtap='saoma'></image>
+    </view>
+  </view>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='swiper'>
+    <block wx:for="{{imgUrls}}">
+      <swiper-item class="swiper-item">
+        <image src="{{item.banner}}" class="slide-image" bindtap='opennew' 
+        data-act_id='{{item.act_id}}' data-type='{{item.type}}' data-id='{{item.id}}'/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='top-padding'></view>
+  <scroll-view class='act-type type-border-buttom' scroll-x>
+    <block wx:for='{{act_type}}'>
+      <view class='act-type-view {{item.purple}} {{item.margin}}' data-index='{{index}}' data-id='{{item.id}}' bindtap='chooestype'>
+        {{item.type_name}}
+      </view>
+    </block>
+  </scroll-view>
+  <view class='act-type'>
+    <view class='act-type-view' bindtap='alltime'>
+      全时段
+      <image src='../../images/20181025103430.png' class='act-type-icon'></image>
+    </view>
+    <view class='act-type-view' bindtap='alltype'>
+      全类型
+      <image src='../../images/20181025103430.png' class='act-type-icon'></image>
+    </view>
+    <view class='act-type-view' bindtap='allregion'>
+      全区域
+      <image src='../../images/20181025103430.png' class='act-type-icon'></image>
+    </view>
+    <view class='act-type-view' bindtap='synthesize'>
+      综合排序
+      <image src='../../images/20181025103430.png' class='act-type-icon'></image>
+    </view>
+  </view>
+  <view class='more-choose' hidden='{{alltime_hidden}}'>
+    <block wx:for='{{alltime}}'>
+      <view class='more-view type-border-buttom' data-datas='{{item.id}}' bindtap='changetime'>{{item.time_name}}</view>
+    </block>  
+  </view>
+  <view class='more-choose' hidden='{{alltype_hidden}}'>
+    <view class='more-view type-border-buttom' data-id='0' bindtap='changetype'>全类型</view>
+    <block wx:for='{{act_type}}'>
+      <view class='more-view type-border-buttom' data-id='{{item.id}}' bindtap='changetype'>{{item.type_name}}</view>
+    </block>  
+  </view>
+  <view class='more-choose' hidden='{{allregion_hidden}}'>
+    <block wx:for='{{province_list}}'>
+      <view class='more-view type-border-buttom' data-province='{{item.name}}' data-id='{{item.id}}' bindtap='changecounty'>
+        {{item.name}}
+      </view>
+    </block>  
+  </view>
+  <view class='more-choose' hidden='{{allcity_hidden}}'>
+    <view class='more-view type-border-buttom' data-city='0' bindtap='changecity'>
+        全区域
+      </view>
+    <block wx:for='{{city_list}}'>
+      <view class='more-view type-border-buttom' data-city='{{item.fullname}}' bindtap='changecity'>
+        {{item.fullname}}
+      </view>
+    </block>  
+  </view>
+  <view class='more-choose' hidden='{{synthesize_hidden}}'>
+    <block wx:for='{{synthesize}}'>
+      <view class='more-view type-border-buttom' data-status='{{item.status}}' bindtap='changekeyword'>{{item.synthesize_name}}</view>
+    </block>  
+  </view>
+  <view class='top-padding'></view>
+  <view class='route-view'>
+    <view class='route-icon-view' bindtap='hotactivity'>
+      <image src='../../images/renqibang3x.png' class='route-icon'></image>
+      <view class='icon-text'>人气榜</view>
+    </view>
+    <view class='route-icon-view view-width' bindtap='openacthost'>
+      <image src='../../images/huodong-faqihuodong3x.png' class='route-icon icon-view-hei-wid'></image>
+      <view class='icon-text text-font'>发起活动</view>
+    </view>
+    <view class='route-icon-view' bindtap='openactcollect'>
+      <image src='../../images/huodong-soucang3x.png' class='route-icon'></image>
+      <view class='icon-text'>收藏</view>
+    </view>
+  </view>
+  <view class='top-padding'></view>
+  <view class='hot_book'>
+    <view class='title'>
+      <view class='hot_book_title'>活动推荐</view>
+      <view class='more_view' bindtap='openactivityrecommend'>
+        更多
+        <image src='../../images/gengduo.png' class='more_img'></image>
+      </view>
+    </view> 
+    <block wx:for="{{act_data}}">
+      <view class='act_list' data-id='{{item.id}}' bindtap='openactivitycontent'>
+        <view class='act_content'>
+          <view class='act_img'>
+            <image class='act_content_img' src='{{item.img}}'></image>
+            <block wx:if="{{item.admin==1}}">
+              <image class='official_icon' src='../../images/guanfang.png'></image>
+            </block>
+          </view>  
+          <view class='act_data'>
+            <view class='act_text'>
+              <image src='../../images/20181212110217.png' class='data_icon'></image>
+              <view class='act_view'>{{item.activity_price}}RMB</view>
+            </view>
+            <view class='act_text'>
+              <image src='../../images/20181212113939.png' class='data_icon'></image>
+              <view class='act_view'>{{item.start_time}}</view>
+            </view>
+            <view class='act_text'>
+              <image src='../../images/20181212114103.png' class='data_icon'></image>
+              <view class='act_view'>{{item.place}}</view>
+            </view>
+            <view class='act_text'>
+              <image src='../../images/20181212114018.png' class='data_icon'></image>
+              <view class='act_view'>{{item.initiator}}</view>
+            </view>
+            <view class='act_text'>
+              <image src='../../images/20181212114045.png' class='data_icon'></image>
+              <text class='red-font'>{{item.num}}</text>/{{item.count}}
+            </view>
+          </view>
+        </view>
+        <view class='act_name'>{{item.name}}</view> 
+      </view>  
+    </block>  
+  </view>
+</view>
+<view class='tar-view'></view>
+<view class='tabBar'>
+  <navigator class='tabBar-nav' open-type='redirect' url='../home/home'>
+    <image class='tabBar-icon' src='../../images/shouyexianxing3x.png'></image>
+    <view class='tabBar-text'>首页</view>
+  </navigator>
+  <navigator class='tabBar-nav' open-type='redirect' url='../book_list/book_list'>
+    <image class='tabBar-icon' src='../../images/shudanxianxing3x.png'></image>
+    <view class='tabBar-text'>书单</view>
+  </navigator>
+  <navigator class='tabBar-br' open-type='redirect' url='../borrow_return/borrow_return'>
+    <view class='br-background'>
+      <image class='tabBar-icon br-icon-mar' src='../../images/jiehuan3x.png'></image>
+    </view>
+    <view class='tabBar-text br-text-mar'>借还</view>
+  </navigator>
+  <navigator class='tabBar-nav'>
+    <image class='tabBar-icon' src='../../images/huodongjianying3x.png'></image>
+    <view class='tabBar-text'>活动</view>
+  </navigator>
+  <navigator class='tabBar-nav' open-type='redirect' url='../member/member'>
+    <image class='tabBar-icon' src='../../images/huiyuanxianxing3x.png'></image>
+    <view class='tabBar-text'>会员</view>
+  </navigator>
+</view>

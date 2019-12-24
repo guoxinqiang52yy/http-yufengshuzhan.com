@@ -1,0 +1,49 @@
+/* pages/readmoney/readmoney.wxss */
+.rm_th{
+  height: 80rpx;
+  width: 710rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 0 20rpx;
+}
+.title{
+  font-size: 28rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #333333;
+  width: 30%;
+}
+.rm_tr{
+  height: 80rpx;
+  width: 710rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 0 20rpx;
+  border-bottom: #BBBBBB 2rpx solid;
+}
+.rm_td{
+  font-size: 28rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #666666;
+  width: 30%;
+  overflow:hidden;
+  /* text-overflow:ellipsis; */
+  white-space:nowrap;
+}
+.text_left{
+  text-align: left;
+}
+.money_add{
+  color: #F20C0C;
+}
+.text_center{
+  text-align: center;
+}
+.text_right{
+  text-align: right
+}

@@ -1,0 +1,7 @@
+<!--pages/activity_sign/activity_sign.wxml-->
+<view class='sign-view font-title'>
+  您要参加的活动是<text class='text-marleft'>[{{sign_data.act_name}}]</text>
+</view>
+<view class='sign-view'>{{sign_data.name}}</view>
+<view class='sign-view'>{{sign_data.mobile}}</view>
+<view class='sign-btn' bindtap='signdo' data-id='{{sign_data.act_id}}'>签到</view>

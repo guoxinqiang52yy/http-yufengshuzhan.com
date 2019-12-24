@@ -1,0 +1,28 @@
+/* pages/nearbybookcase/nearbybookcase.wxss */
+page{
+  width: 100%;
+  background-color: #fff;
+}
+.margin-left{
+  margin-left: -50rpx
+}
+.prompts{
+  font-size: 28rpx;
+  line-height: 68rpx;
+  height: 68rpx;
+  width: 710rpx;
+  padding:0 20rpx; 
+  background-color: #F2F2F2;
+  color: #333333;
+}
+.go_bookcase{
+  height: 30rpx;
+  width: 30rpx;
+}
+.is_bookcase{
+  width: 40rpx;
+  height: 40rpx;
+}
+.bookcase_content_width{
+  width:440rpx;
+}

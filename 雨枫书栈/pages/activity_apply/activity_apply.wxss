@@ -1,0 +1,120 @@
+/* pages/activity_apply/activity_apply.wxss */
+.mar-top{
+  margin-top: 20rpx;
+}
+.input-view{
+  height: 80rpx;
+  width: 100%;
+  display: flex;
+  flex-direction:row;
+  justify-content: flex-start;
+  align-items: center; 
+  background-color: #fff;
+}
+.input-img{
+  width: 46rpx;
+  height: 50rpx;
+  margin-left: 40rpx;
+}
+.bor-top{
+  border-top: #CCCCCC 2rpx solid;
+}
+.input{
+  width: 550rpx;
+  height: 80rpx;
+  margin-left: 40rpx;
+  font-size: 30rpx;
+  color: #999;
+  line-height: 80rpx;
+}
+.apply-btn{
+  width: 320rpx;
+  height: 80rpx;
+  color: #fff;
+  background-color: #6658a6;
+  border-radius: 40rpx;
+  font-size: 36rpx;
+  line-height: 80rpx;
+  text-align: center;
+  margin: 100rpx auto;
+}
+.sign_in_ok_bg{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0px;
+  /* background-color: #000; */
+  background: rgba(0,0,0,0.6);
+  /* opacity: 0.8; */
+}
+.pay_type{
+  height: 394rpx;
+  width: 100%;
+  background-color: #fff;
+  position: absolute;
+  left: 0rpx;
+  bottom: 0rpx;
+}
+.pay_close{
+  height: 64rpx;
+  width: 100%;
+  border-bottom: #CCCCCC 2rpx solid;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+.pay_close_x{
+  width: 40rpx;
+  height: 40rpx;
+  color: #A0A0A0;
+  font-size: 40rpx;
+  line-height: 40rpx;
+  margin-right: 20rpx;
+}
+.pay_choose{
+  height: 210rpx;
+  width: 100%;
+}
+.now_pay{
+  height: 100rpx;
+  background-color: #6658A6;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  line-height: 98rpx;
+  font-size: 28rpx;
+}
+.money{
+  font-size: 36rpx;
+}
+.moeny_year{
+  color: #333333;
+  font-size: 26rpx;
+}
+.pay_choose_type{
+  height: 30rox;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-around;
+  margin-top:20rpx;
+}
+.pay_choose_icon{
+  height: 40rpx;
+  width: 40rpx;
+}
+.choose_content{
+  width: 500rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  color: #333333;
+  text-align: left;
+  font-size: 30rpx;
+}
+.choose_content_text{
+  color: #666666;
+}

@@ -1,0 +1,8 @@
+<view class="book_body">
+    <view class="book_content">
+        通过雨枫书栈小程序，用户可以自助借阅雨枫书栈图书，用户还可以通过雨枫书栈小程序参与或发起活动。
+    </view>
+    <view class="book_button">
+        <button>前往登录</button>
+    </view>
+</view>

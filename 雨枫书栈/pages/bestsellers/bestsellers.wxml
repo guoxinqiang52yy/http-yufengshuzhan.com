@@ -1,0 +1,30 @@
+<!--pages/bestsellers/bestsellers.wxml-->
+<view class='homePage'>
+  <view class="searchBarContainer">
+      <view class="searchBar">
+      <view class='text_place_holder'>
+      <input class="search-input" placeholder='请输入书名/作者' placeholder-class='input-placeholder' confirm-type="search" bindconfirm="searchSubmit" bindinput='changesearchvalue'>
+      </input>   
+      <image src='../../images/sousuo3.png' class='search_img' bindtap='searchSubmit'/>
+      </view>
+    <image src='../../images/saoma.png' class='saoma' bindtap='saoma'></image>
+  </view>
+  </view>
+  <block wx:for='{{book_list_hot}}'>
+    <view class='book_recommend' bindtap='openbookcontent' data-id='{{item.id}}'>
+      <image src='{{item.img}}' class='book_recommend_img'></image>
+      <view class='book_recommend_content'>
+        <view class='book_recommend_title'>
+          {{item.list_name}}
+        </view>
+        <view class='book_recommend_jianjie'>
+          {{item.description}}
+        </view>
+        <view class='book_recommend_surplus'>
+          <image class='book_recommend_surplus_icon' src='../../images/borrow_return.png'></image>
+          <text class='surplus_num'>{{item.count}}本</text>
+        </view>
+      </view>
+    </view>
+  </block> 
+</view>

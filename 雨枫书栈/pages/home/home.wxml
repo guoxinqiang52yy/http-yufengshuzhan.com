@@ -1,0 +1,188 @@
+<!--pages/home/home.wxml-->
+<view class="searchBarContainer">
+  <view class="searchBar">
+    <view class='text_place_holder'>
+      <input class="search-input" placeholder='请输入书名/作者' placeholder-class='input-placeholder' confirm-type="search" bindconfirm="searchSubmit" bindinput='changesearchvalue'>
+      </input>   
+      <image src='../../images/sousuo3.png' class='search_img' bindtap='searchSubmit'/>
+    </view>
+    <image src='../../images/saoma.png' class='saoma' bindtap='saoma'></image>
+  </view>
+</view>
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='swiper'>
+  <block wx:for="{{imgUrls}}">
+    <swiper-item class="swiper-item">
+      <image src="{{item.banner}}" class="slide-image" bindtap='opennew' data-act_id='{{item.act_id}}' data-type='{{item.type}}' data-id='{{item.id}}'/>
+    </swiper-item>
+  </block>
+</swiper>
+<view class='borrow_return borrow_return_border' bindtap='saoma'>
+  <view class='br_img_view'>
+    <image src='../../images/jieshu3.png' class='br_img'></image>
+  </view>
+  <text class='borrow_return_text'>借书</text>
+</view>
+<view class='borrow_return' bindtap='openmyborrow'>
+  <view class='br_img_view'>
+    <image src='../../images/huanshu.png' class='br_img'></image>
+  </view>
+  <text class='borrow_return_text'>还书</text>
+</view>
+<view class='top-padding'></view>
+<view class='hot_book'>
+  <view class='title'>
+    <view class='hot_book_title'>好读推荐</view>
+    <view class='more_view' bindtap='openbestsellers'>
+      更多
+      <image src='../../images/gengduo.png' class='more_img'></image>
+    </view>
+  </view>  
+  <view class='hot_book_main'>
+    <block wx:for="{{book_list_hot_img}}">
+      <image class='hot_book_list' src="{{item.img}}" bindtap='openbooklistcontent' data-id='{{item.id}}'></image>
+    </block>
+  </view>   
+</view>
+<view class='start_activity'>
+  <image src='../../images/huodongjiaobiao2.png' class='activity_icon'></image>
+  <view class='start_activity_text' bindtap='openacthost'>
+    <text class='text_marleft'>发起活动</text>
+    <image src='../../images/faqihuodong3.png' class='start_add'></image>
+  </view>
+</view>
+<view class='top-padding'></view>
+<view class='hot_book act_recommend_h'>
+  <view class='title'>
+    <view class='hot_book_title'>活动推荐</view>
+    <view class='more_view' bindtap='openactivityrecommend'>
+      更多
+      <image src='../../images/gengduo.png' class='more_img'></image>
+    </view>
+  </view> 
+  <block wx:for="{{act_data}}">
+    <view class='act_list' bindtap='openactivitycontent' data-id='{{item.id}}'>
+      <view class='act_content'>
+        <view class='act_img'>
+          <image class='act_content_img' src='{{item.img}}'></image>
+          <block wx:if="{{item.admin==1}}">
+            <image class='official_icon' src='../../images/guanfang.png'></image>
+          </block>
+        </view>  
+        <view class='act_data'>
+          <view class='act_text'>
+            <image src='../../images/20181212110217.png' class='data_icon'></image>
+            <view class='act_view'>{{item.activity_price}}RMB</view>
+          </view>
+          <view class='act_text'>
+            <image src='../../images/20181212113939.png' class='data_icon'></image>
+            <view class='act_view'>{{item.start_time}}</view>
+          </view>
+          <view class='act_text'>
+            <image src='../../images/20181212114103.png' class='data_icon'></image>
+            <view class='act_view'>{{item.place}}</view>
+          </view>
+          <view class='act_text'>
+            <image src='../../images/20181212114018.png' class='data_icon'></image>
+            <view class='act_view'>发起人:{{item.initiator}}</view>
+          </view>
+          <view class='act_text'>
+            <image src='../../images/20181212114045.png' class='data_icon'></image>
+            <text class='red-font'>{{item.num}}</text>/{{item.count}}
+          </view>
+        </view>
+      </view>
+      <view class='act_name'>{{item.name}}</view> 
+    </view>  
+  </block>  
+</view>
+<view class='top-padding'></view>
+<view class='hot_book hot_reader_h'>
+  <view class='title'>
+    <view class='hot_book_title'>读书大使</view>
+    <view class='more_view' bindtap='getamblist'>
+      换一批
+      <image src='../../images/huanyipi.png' class='change_img'></image>
+    </view>
+  </view>
+  <view class='hot_reader_main'>
+    <block wx:for="{{hot_reader}}">
+      <view class='hot_reader_list'>
+        <image class='hot_reader_headimg' src='{{item.img}}'/>
+        <view class='hot_reader_name'>{{item.name}}</view>
+        <view class='hot_reader_content'>{{item.des}}</view>
+        <block wx:if='{{item.be_fan==0}}'>
+          <view class='hot_reader_attended' data-id='{{item.id}}' data-index='{{index}}' bindtap='followuser'>关注</view>
+        </block>
+        <block wx:if='{{item.be_fan==1}}'>
+          <view class='hot_reader_attended' bindtap='cancelfollow' data-id='{{item.id}}' data-index='{{index}}'>已关注</view>
+        </block>
+      </view>
+    </block> 
+  </view>
+</view>
+<view class='top-padding'></view>
+<view class='hot_book bookcase_h'>
+  <view class='title'>
+    <view class='hot_book_title'>附近书栈</view>
+    <view class='more_view' bindtap='opennearbybookcase'>
+      更多
+      <image src='../../images/gengduo.png' class='more_img'></image>
+    </view>
+  </view>  
+  <block wx:for="{{bookcase_data}}">
+    <view class='bookcase_list' bindtap='openbccontent' data-id='{{item.id}}'>
+      <image src='{{item.img}}' class='bookcase_img'></image>
+      <view class='bookcase_content'>
+        <view class='bookcase_name'>{{item.name}}</view>
+        <view class='bookcase_address'>  
+          <image src='../../images/sousuo-dingwei3.png' class='data_icon'></image>
+          {{item.place}}
+          
+        </view>
+        <view class='bookcase_other'>  
+          <view class='other_list'>
+            <image src='../../images/shuji3x.png' class='data_icon'></image>
+            {{item.count}}本
+          </view>
+          <view class='other_list'>
+            <image src='../../images/dingwei3x.png' class='data_icon'></image>
+            {{item.distance}}
+          </view>
+        </view>
+        <!-- <image src='../../images/qianwnag3.png' class='jinru'></image> -->
+      </view>
+    </view>
+  </block>
+</view>
+<view class='sign_in_ok_bg' hidden='{{sign_hidden}}' bindtap='hiddensign'>
+  <view class='sign_in_tishi' bindtap='hiddensign'>
+    <image src='../../images/qiandao.png' class='sign_in_img'></image>
+    <view class='sign_in_text'>签到成功，阅读币<text class='add_5'>+{{sign_num}}</text>。</view>
+  </view>
+</view>
+<view class='tar-view'></view>
+<view class='tabBar'>
+  <navigator class='tabBar-nav'>
+    <image class='tabBar-icon' src='../../images/shouyejianying3x.png'></image>
+    <view class='tabBar-text'>首页</view>
+  </navigator>
+  <navigator class='tabBar-nav' open-type='redirect' url='../book_list/book_list'>
+    <image class='tabBar-icon' src='../../images/shudanxianxing3x.png'></image>
+    <view class='tabBar-text'>书单</view>
+  </navigator>
+  <navigator class='tabBar-br' open-type='redirect' url='../borrow_return/borrow_return'>
+    <view class='br-background'>
+      <image class='tabBar-icon br-icon-mar' src='../../images/jiehuan3x.png'></image>
+    </view>
+    <view class='tabBar-text br-text-mar'>借还</view>
+  </navigator>
+  <navigator class='tabBar-nav' open-type='redirect' url='../activity/activity'>
+    <image class='tabBar-icon' src='../../images/huodongxianxing3x.png'></image>
+    <view class='tabBar-text'>活动</view>
+  </navigator>
+  <navigator class='tabBar-nav' open-type='redirect' url='../member/member'>
+    <image class='tabBar-icon' src='../../images/huiyuanxianxing3x.png'></image>
+    <view class='tabBar-text'>会员</view>
+  </navigator>
+</view>
+

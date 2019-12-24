@@ -1,0 +1,9 @@
+<!--pages/msg_content/msg_content.wxml-->
+<view class='homePage page_bgcolor'>
+  <view class='msg_time'>
+    {{msgcontent.add_time}}
+  </view>
+  <view class='msg_content'>
+    <text>{{msgcontent.content}}</text>
+  </view>
+</view>

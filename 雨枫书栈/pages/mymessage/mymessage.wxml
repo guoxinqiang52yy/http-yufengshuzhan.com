@@ -1,0 +1,31 @@
+<!--pages/mymessage/mymessage.wxml-->
+<view class='homePage'>
+  <view class='top-padding'></view>
+  <block wx:for='{{msglist}}'>
+    <view class='msg' bindtap='openmsgcontent' data-id='{{item.id}}'>
+      <block wx:if='{{item.type==0}}'>
+        <image class='msg_icon' src='../../images/xitongxiaoxi3x.png'></image>
+      </block>
+      <block wx:if='{{item.type==1}}'>
+        <image class='msg_icon' src='../../images/tongzhi3x.png'></image>
+      </block>
+      <view class='msg_title'>
+        <view class='msg_type' wx:if='{{item.type==0}}'>
+          系统消息
+        </view>
+        <view class='msg_type' wx:elif='{{item.type==1}}'>
+          通知
+        </view>
+        <view class='msg_jianjie'>
+          {{item.content}}
+        </view>
+      </view>
+      <view class='msg_time'>
+        {{item.add_time}}
+      </view>
+      <block wx:if='{{item.is_read==0}}'>
+        <cover-view class='noread'></cover-view>
+      </block>
+    </view>
+  </block>
+</view>

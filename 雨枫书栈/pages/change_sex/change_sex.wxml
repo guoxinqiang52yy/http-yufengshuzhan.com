@@ -1,0 +1,12 @@
+<!--pages/change_sex/change_sex.wxml-->
+<view class='homePage'>
+  <view class='choose-sex'>
+    <view class='choose-sex-title'>性别</view>
+    <view class='sex-group'>
+      <block wx:for="{{items}}">
+        <view class='choose-radio {{item.checked}}' data-value='{{item.value}}' bindtap='changechoose'></view>
+        <text class='sex-name'>{{item.name}}</text>
+      </block>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,5 @@
+/* pages/attention/attention.wxss */
+.data-sign{
+  color: #666;
+  font-size: 24rpx;
+}

@@ -1,0 +1,162 @@
+<!--pages/activity_content/activity_content.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class='img-view'>
+  <image class='act-img' src='{{act_detail.img}}'></image>
+  <view class='act-name'>{{act_detail.name}}</view>
+</view>
+<view class='top-padding'></view>
+<view class='host-view'>
+  <block wx:if='{{act_detail.admin==1}}'>
+    <image class='host-icon' src='../../images/20181025174051.png'></image>
+  </block>  
+  <view class='head-view'>
+    <image src='{{initiator_info.img}}' class='initiator_head_img'></image>
+  </view>
+  <view class='host-right'>
+    <view class='host-name'>{{initiator_info.name}}</view>
+    <view class='host-content'>
+      {{initiator_info.des}}
+    </view>
+    <view class='host-content'>
+      <view>粉丝<text class='host-num'>{{initiator_info.fans}}</text></view>
+      <view class='host-marginleft'>活动<text class='host-num'>{{initiator_info.act_num}}</text></view>
+    </view>
+    <block wx:if='{{initiator_info.followed!=1}}'>
+      <view class='host-attention' bindtap='followuser' data-id='{{initiator_info.id}}'>
+        +关注
+      </view>
+    </block>
+    <block wx:if='{{initiator_info.followed==1}}'>
+      <view class='host-attention' bindtap='cancelfollow' data-id='{{initiator_info.id}}'>
+        已关注
+      </view>
+    </block>
+  </view>
+</view>
+<view class='top-padding'></view>
+<view class='content_view'>
+  <view class='content_title'>已报名</view>
+  <image src='../../images/huangguan3x.png' class='host-head-icon'></image>
+  <image class='head-img head-margin' src='{{initiator_info.img}}'></image>
+  <scroll-view class='applied-view' scroll-x>
+    <block wx:for="{{head_list}}">
+      <image src='{{item.img}}' class='head-img head-margin'></image>
+    </block>  
+  </scroll-view>
+</view>
+<view class='top-padding'></view>
+<view class='act-notice'>
+  <view class='content_title'>活动须知</view>
+  <view class='notice-contetn'>
+    <view class='notice-info'>
+      <image src='../../images/20181212110217.png' class='notice-icon'></image>
+      <text class='notice-text'>{{act_detail.activity_price}}RMB</text>
+    </view>
+    <view class='notice-info'>
+      <image src='../../images/20181212113939.png' class='notice-icon'></image>
+      <text class='notice-text'>{{act_detail.start_time}}</text>
+    </view>
+    <view class='notice-info mar-top'>
+      <image src='../../images/20181212114018.png' class='notice-icon'></image>
+      <text class='notice-text'>发起人:{{initiator_info.name}}</text>
+    </view>
+    <view class='notice-info mar-top'>
+      <image src='../../images/20181212114045.png' class='notice-icon'></image>
+      <text class='notice-text'>已报名:<text class='red-font'>{{act_detail.num}}</text>/{{act_detail.count}}</text>
+    </view>
+    <view class='notice-info mar-top info-width'>
+      <image src='../../images/20181212114103.png' class='notice-icon'></image>
+      <text class='notice-text'>{{act_detail.place}}</text>
+    </view>
+  </view>
+</view>
+<view class='top-padding'></view>
+<view class='act-content'>
+  <view class='content_title'>活动内容</view>
+  <view class='content-detail'>
+    <template is="wxParse" data="{{wxParseData:activity_des.nodes}}"/>
+  </view>
+</view>
+<view class='act-comment'>
+  <view class='title'>
+    <view class='content_title'>评论({{act_detail.comnum}})</view>
+    <view class='more_view' bindtap='opencomment'>
+      评论
+      <image src='../../images/gengduo.png' class='more_img'></image>
+    </view>
+  </view> 
+  <block wx:for="{{act_comment}}">
+    <view class='comment-content'>
+      <view class='comment-text'>{{item.content}}</view>
+      <scroll-view class='comment-img-view' scroll-x wx:if='{{item.img_num!=0}}'>
+        <block wx:for="{{item.img}}" wx:for-item="img">
+          <image src='{{img.img}}' class='comment-img'></image>
+        </block>
+      </scroll-view>
+      <view class='reply-triangle' hidden='{{item.child_hidden}}'></view>
+      <view class='reply' hidden='{{item.child_hidden}}'>
+        <block wx:for='{{item.child}}' wx:for-item='child'>
+          <view class='reply-detail' wx:if='{{child.to==null}}' bindtap='actcomment'
+           data-to_name='{{child.form}}' data-cid='{{child.id}}' data-index='{{child.index}}'>
+            <text class='reply-color2'>{{child.form}}：<text class='reply-color1'>{{child.content}}</text></text>
+          </view>
+          <view class='reply-detail' wx:if='{{child.to!=null}}' bindtap='actcomment' 
+          data-to_name='{{child.form}}' data-cid='{{child.id}}' data-index='{{child.index}}'>
+            <text class='reply-color2'>{{child.form}}<text class='reply-color1'>回复</text><text class='reply-color2'>{{child.to}}</text>
+            <text class='reply-color1'>{{child.content}}</text></text>
+          </view>
+        </block>
+        <view class='reply-detail' hidden='{{item.reply_hidden}}'>
+          <text class='reply-color1'>回复</text><text class='reply-color2'>{{to_name}}</text>
+          <input type='text' placeholder='请输入评论内容' class='reply-color1' value='{{value}}' adjust-position='true' confirm-type='send' bindconfirm="publishcomment" bindinput='changevalue' focus='{{item.input_focus}}' data-index='{{index}}' bindblur='displaybtn'></input>
+        </view>
+      </view>
+      <view class='reply-btn' data-index='{{index}}' bindtap='actcomment' data-to_name='{{item.name}}' data-cid='{{item.id}}'>
+        <image src='../../images/pinglun3x.png' class='reply-icon'></image>
+        评论
+      </view>  
+    </view>
+  </block>
+  <view class='check-more' bindtap='getactcomment' hidden="{{more_hidden}}">查看更多</view>
+</view>
+<view class='top-padding'></view>
+<view class='buttom-view'></view>
+<view class='bottom_btn' hidden='{{btnhidden}}'>
+  <button class='btn1 bor-right' open-type="share">
+    <image src='../../images/fenxiang2.png' class='btn-icon'></image>
+    <text class='btn1-text'>分享</text>
+  </button>
+  <block wx:if='{{collect==true}}'>
+    <view class='btn1' bindtap='collectact'>
+      <image src='../../images/shoucang_start.png' class='btn-icon'></image>
+      <text class='btn1-text'>收藏</text>
+    </view>
+  </block>
+  <block wx:if='{{collect==false}}'>
+    <view class='btn1' bindtap='collectact'>
+      <image src='../../images/huodong-soucang2.png' class='btn-icon'></image>
+      <text class='btn1-text'>收藏</text>
+    </view>
+  </block>
+  <block wx:if='{{act_detail.can_join==1}}'>
+    <view class='btn2 btn-bgcolor' bindtap='openactapply' data-id='{{act_detail.id}}'>
+      我要报名
+    </view>
+  </block>
+  <block wx:if='{{act_detail.can_join==2}}'>
+    <view class='btn2'>
+      已报名
+    </view>
+  </block>
+  <block wx:if='{{act_detail.can_join==0}}'>
+    <view class='btn2'>
+      已结束
+    </view>
+  </block>
+  <block wx:if='{{act_detail.can_join==3}}'>
+    <view class='btn2'>
+      未开始
+    </view>
+  </block>
+</view>
+

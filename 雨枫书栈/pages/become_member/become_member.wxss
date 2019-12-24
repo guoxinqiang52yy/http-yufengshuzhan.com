@@ -1,0 +1,19 @@
+/* pages/become_member/become_member.wxss */
+.bgcolor{
+  background-color: #F2F2F2;
+}
+.become_icon{
+  margin:360rpx auto 0 auto;
+  display: block;
+  height: 124rpx;
+  width: 148rpx;
+}
+.become_text{
+  height: 36rpx;
+  width: 100%;
+  color:#333333;
+  text-align: center;
+  line-height: 36rpx;
+  font-size: 36rpx;
+  margin-top: 20rpx;
+}

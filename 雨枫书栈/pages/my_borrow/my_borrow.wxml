@@ -1,0 +1,30 @@
+<!--pages/my_borrow/my_borrow.wxml-->
+<view class='homePage'>
+  <block wx:for='{{my_borrow}}'>
+    <view class='borrow_list'>
+      <image src='{{item.img}}' class='borrow_img' bindtap='openbookcontent' data-isbn='{{item.isbn}}'></image>
+      <view class='borrow_content'>
+        <view class='b_book_name'>{{item.book_name}}</view>
+        <view class='b_borrow_some'>借书时间:{{item.add_time}}</view>
+        <view class='b_borrow_some'>借书书栈:{{item.stack}}</view>
+        <view class='b_borrow_some'>订单号:{{item.order_number}}</view>
+      </view>
+      <view class='borrow_btn'>
+        <view class='btn color_hui' bindtap='buybook' data-order_number='{{item.order_number}}'>购买</view>
+        <view class='btn color_zi' bindtap='returnhidden' data-order_number='{{item.order_number}}'>还书</view>
+      </view>
+    </view>
+  </block>
+</view>
+<view class='sign_in_ok_bg' hidden='{{return_hidden}}' bindtap='cancelReturn'>
+  <view class='return_view border-bottom'>
+    <view class='return_type border-bottom' bindtap='returnbook' data-num='0'>
+      <image class='return_icon' src='../../images/shugui.png'></image>
+      <view class='return_text'>书柜还书</view>
+    </view>
+    <view class='return_type' bindtap='returnbook' data-num='1'>
+      <image class='return_icon' src='../../images/shujiao.png'></image>
+      <view class='return_text'>书角还书</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,21 @@
+<!--pages//my_balance/my_balance.wxml-->
+<view class='homePage'>
+  <block wx:for='{{balance_list}}'>
+    <view class='balance-view'>
+      <view class='balance-left'>
+        <view class='balance-title'>
+          {{item.type}}
+        </view>
+        <view class='balance-time'>{{item.add_time}}</view>
+      </view>
+      <view class='balance-right'>
+        <view class='balance-title' wx:if='{{item.add==0}}'>
+          -{{item.money}}
+        </view>
+        <view class='balance-title' wx:elif='{{item.add==1}}'>
+          +{{item.money}}
+        </view>
+      </view>
+    </view> 
+  </block> 
+</view>

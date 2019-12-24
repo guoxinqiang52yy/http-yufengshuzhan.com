@@ -1,0 +1,38 @@
+/* pages/activity_host/activity_host.wxss */
+.main{
+  margin: 220rpx auto;
+  width: 670rpx;
+  height: 212rpx;
+  background-color: #fff;
+  border-radius: 12rpx;
+  padding-top: 80rpx;
+  font-size: 28rpx;
+  color: #333;
+  text-align: center;
+  line-height: 40rpx;
+  word-break:break-all;
+}
+.main-img{
+  position: absolute;
+  top: 180rpx;
+  left: 328rpx;
+  width: 114rpx;
+  height: 114rpx;
+}
+.main-text{
+  width: 90%;
+  font-size: 28rpx;
+  color: #333;
+  text-align: center;
+  line-height: 40rpx;
+  display:block;
+  white-space: pre-wrap
+}
+.hint{
+  width: 100%;
+  height: 24rpx;
+  line-height: 24rpx;
+  color: #333;
+  text-align: center;
+  font-size: 24rpx;
+}

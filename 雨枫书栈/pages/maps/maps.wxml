@@ -1,0 +1,13 @@
+<!--pages/maps/maps.wxml-->
+<view class='homePage home-heigth'>
+  <map class='qqmap' longitude='{{fromlongitude}}' latitude='{{fromlatitude}}' polyline='{{polyline}}' markers='{{markers}}'>
+    <cover-view class='type-choose'>
+      <block wx:for='{{type_btn}}'>
+        <cover-view class='type-btn {{item.type_class}}' bindtap='changetype' data-num='{{item.type_num}}'>
+          <cover-image src='{{item.path}}' class='type-btn-img'></cover-image>
+            {{item.type_text}}
+        </cover-view>
+      </block>
+    </cover-view>
+  </map>
+</view>

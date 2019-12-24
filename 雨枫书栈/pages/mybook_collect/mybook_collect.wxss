@@ -1,0 +1,37 @@
+/* pages/mybook_collect/mybook_collect.wxss */
+page{
+  background: #fff;
+}
+.borrow_list{
+  height: 200rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  border-bottom: #AEABAC 2rpx solid;
+}
+.borrow_img{
+  height: 160rpx;
+  width: 120rpx;
+  margin-top: 20rpx;
+}
+.borrow_content{
+  width: 540rpx;
+  height: 160rpx;
+  margin:20rpx 0 0 0; 
+}
+.b_book_name{
+  height: 28rpx;
+  line-height: 28rpx;
+  font-size: 28rpx;
+  color: #333333;
+  margin-top: 20rpx;
+}
+.b_borrow_some{
+  height: 24rpx;
+  line-height: 24rpx;
+  font-size: 24rpx;
+  color: #666666;
+  margin-top: 20rpx;
+}

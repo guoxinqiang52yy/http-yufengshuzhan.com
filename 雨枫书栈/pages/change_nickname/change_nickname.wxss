@@ -1,0 +1,10 @@
+/* pages/change_nickname/change_nickname.wxss */
+.nickname-input{
+  height: 80rpx;
+  width: 730rpx;
+  padding: 0 10rpx;
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  color: #666666;
+}

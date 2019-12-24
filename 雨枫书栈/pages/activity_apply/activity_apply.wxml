@@ -1,0 +1,35 @@
+<!--pages/activity_apply/activity_apply.wxml-->
+<view class='input-view mar-top'>
+  <image src='../../images/xingming3x.png' class='input-img'></image>
+  <input class='input' placeholder='请输入您的真实姓名' type='text' bindinput='changename' value='{{user_name}}'></input>
+</view>
+<view class='input-view bor-top'>
+  <image src='../../images/lianxifangshi3x.png' class='input-img'></image>
+  <input class='input' placeholder='请输入您的联系方式' type='number' bindinput='changephone' value='{{user_phone}}' maxlength="11"></input>
+</view>
+<view class='apply-btn' bindtap='payhidden'>确认报名并支付</view>
+<view class='sign_in_ok_bg' hidden='{{pay_hidden}}'>
+  <view class='pay_type'>
+    <view class='pay_close'>
+      <view class='pay_close_x' bindtap='hiddenpay'>x</view>
+    </view>
+    <radio-group class='pay_choose' bindchange="radioChange">
+      <view class='pay_choose_type'>
+        <image src='../../images/weixinzhifu2.png' class='pay_choose_icon'></image>
+        <view class='choose_content'>微信支付</view>
+        <radio class='choose_radio' color='#6658A6' value='0' checked='true'></radio>  
+      </view>
+      <view class='pay_choose_type mar-top'>
+        <image src='../../images/yuedubi2.png' class='pay_choose_icon'></image>
+        <view class='choose_content choose_content_text'>
+          您有{{integral_data.integral}}阅读币，满{{integral_data.man}}阅读币可用。\n{{integral_data.man}}阅读币可抵用{{integral_data.di}}元
+         
+        </view>
+        <radio class='choose_radio' color='#6658A6' value='1'></radio>
+      </view>
+    </radio-group>
+    <view class='now_pay' bindtap='openapplyresultagain'>
+      立即支付
+    </view>
+  </view>
+</view>

@@ -1,0 +1,14 @@
+<!--pages/affirm_return/affirm_return.wxml-->
+<view class='affirm_bg'>
+  <view class='affirm_title'>还书</view>
+  <view class='affirm_info'>书名:{{name}}</view>
+  <view class='affirm_info'>价格:{{price}}</view>
+  <view class='affirm_info' wx:if="{{back_order!=null}}">订单编号:{{back_order}}</view>
+  <view class='affirm_info' wx:elif="{{order_number!=null}}">订单编号:{{order_number}}</view>
+  <view class='affirm_info'>时间:{{time}}</view>
+  <view class='btn-view'>
+    <view class='affirm-btn btn-color1' bindtap='cancel'>取消</view>
+    <view class='affirm-btn btn-color2' bindtap='returnCallback'>支付</view> 
+  </view>
+</view>
+<image src='../../images/20181211100330.png' class='affirm-img'></image>

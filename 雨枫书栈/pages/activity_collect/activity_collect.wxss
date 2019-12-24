@@ -1,0 +1,35 @@
+/* pages/activity_collect/activity_collect.wxss */
+.act-collect-view{
+  height: 300rpx;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.collect-img{
+  width: 400rpx;
+  height: 160rpx;
+  margin: 40rpx 0 0 40rpx;
+}
+.collect-view{
+  display: flex;
+  width: 400rpx;
+  height: 24rpx;
+  margin: 10rpx 0 0 40rpx;
+  justify-content: space-between
+}
+.collect-text{
+  height: 24rpx;
+  line-height: 24rpx;
+  color: #333;
+  font-size: 24rpx;
+}
+.official_icon{
+  height: 40rpx;
+  width: 40rpx;
+  position: relative;
+  top: -160rpx;
+  left: 40rpx;
+}

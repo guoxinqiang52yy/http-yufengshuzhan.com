@@ -1,0 +1,38 @@
+<!--pages/mydata/mydata.wxml-->
+<view class='homePage'>
+  <view class='data-list'>
+    <view class='data-title'>头像</view>
+    <view class='data-head-view' wx:if="{{user_data.img}}">
+      <image class='data-head' src='{{user_data.img}}'></image>
+    </view>
+    <view class='data-head-view' wx:else>
+    </view>  
+  </view>
+  <view class='data-list' bindtap='openchangenickname'>
+    <view class='data-title'>名字</view>
+    <view class='data-content' wx:if="{{user_data.name}}" data-name='{{user_data.name}}'>{{user_data.name}}</view>
+    <view class='data-content' wx:else>未填写</view>  
+  </view>
+  <view class='data-list'>
+    <view class='data-title'>账号</view>
+    <view class='data-content' wx:if="{{user_data.mobile}}" data-moblie='{{user_data.mobile}}'>{{user_data.mobile}}</view>
+    <view class='data-content' wx:else>未填写</view>  
+  </view>
+  <view class='data-list' bindtap='openchangesex'>
+    <view class='data-title'>性别</view>
+    <view class='data-content' wx:if="{{user_data.sex==0}}">保密</view>
+    <view class='data-content' wx:elif="{{user_data.sex==1}}">男</view>
+    <view class='data-content' wx:elif="{{user_data.sex==2}}">女</view>
+    <view class='data-content' wx:else>未填写</view>  
+  </view>
+  <view class='data-list' bindtap='openchangeregoin'>
+    <view class='data-title'>地区</view>
+    <view class='data-content' wx:if="{{user_data.region}}" data-regoin='{{user_data.region}}'>{{user_data.region}}</view>
+    <view class='data-content' wx:else>未填写</view>  
+  </view>
+  <view class='data-list' bindtap='openchangesign'>
+    <view class='data-title'>个性签名</view>
+    <view class='data-content' wx:if="{{user_data.des}}" data-des='{{user_data.des}}'>{{user_data.des}}</view>
+    <view class='data-content' wx:else>未填写</view>  
+  </view>
+</view>

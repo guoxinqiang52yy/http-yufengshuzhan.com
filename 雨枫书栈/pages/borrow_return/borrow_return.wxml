@@ -1,0 +1,62 @@
+<!--pages/borrow_return/borrow_return.wxml-->
+<view class='homePage'>
+  <view class="searchBarContainer">
+    <view class="searchBar">
+      <image src='../../images/sousuo-dingwei2.png' class='didian_img'></image>
+      <text class='site_text'>{{currentCity}}</text>
+      <view class='text_place_holder text_place_holder_width'>
+        <input class="search-input input-width" placeholder='请输入书名/作者' placeholder-class='input-placeholder'
+        bindconfirm='searchSubmit' bindinput='changesearchvalue'>
+        </input>    
+        <image src='../../images/sousuo3.png' class='search_img' bindtap='searchSubmit'/>
+      </view>
+      <image src='../../images/saoma.png' class='saoma' bindtap='saoma'></image>
+    </view>
+  </view>
+  <view class='borrow_return' bindtap='saoma'>
+    <view class='br_img_view'>
+      <cover-image src='../../images/jieshu3.png' class='br_img'/>
+    </view>
+    <view class='br_title'>
+      <view class='br_title_name'>借书</view>
+      <view class='br_title_content'>自助借书，畅享阅读</view>
+    </view>
+    <image src='../../images/qianwnag2.png' class='jinru_img'></image>
+  </view>
+  <view class='top-padding'></view>
+  <view class='borrow_return' bindtap='openmyborrow'>
+    <view class='br_img_view'>
+      <cover-image src='../../images/huanshu.png' class='br_img'/>
+    </view>
+    <view class='br_title'>
+      <view class='br_title_name'>还书</view>
+      <view class='br_title_content'>自助扫码，就近归还</view>
+    </view>
+    <image src='../../images/qianwnag2.png' class='jinru_img'></image>
+  </view>
+  <view class='top-padding'></view>
+</view>
+<view class='tabBar'>
+  <navigator class='tabBar-nav' open-type='redirect' url='../home/home'>
+    <image class='tabBar-icon' src='../../images/shouyexianxing3x.png'></image>
+    <view class='tabBar-text'>首页</view>
+  </navigator>
+  <navigator class='tabBar-nav' open-type='redirect' url='../book_list/book_list'>
+    <image class='tabBar-icon' src='../../images/shudanxianxing3x.png'></image>
+    <view class='tabBar-text'>书单</view>
+  </navigator>
+  <navigator class='tabBar-br'>
+    <view class='br-background'>
+      <image class='tabBar-icon br-icon-mar' src='../../images/jiehuan3x.png'></image>
+    </view>
+    <view class='tabBar-text br-text-mar'>借还</view>
+  </navigator>
+  <navigator class='tabBar-nav' open-type='redirect' url='../activity/activity'>
+    <image class='tabBar-icon' src='../../images/huodongxianxing3x.png'></image>
+    <view class='tabBar-text'>活动</view>
+  </navigator>
+  <navigator class='tabBar-nav' open-type='redirect' url='../member/member'>
+    <image class='tabBar-icon' src='../../images/huiyuanxianxing3x.png'></image>
+    <view class='tabBar-text'>会员</view>
+  </navigator>
+</view>

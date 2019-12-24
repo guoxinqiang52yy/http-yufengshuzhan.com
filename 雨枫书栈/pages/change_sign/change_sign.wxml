@@ -1,0 +1,5 @@
+<!--pages/change_sign/change_sign.wxml-->
+<view class='homePage'>
+  <textarea class='sign-textarea' maxlength="30" value='{{des}}' placeholder='请输入个性签名' bindinput='changedes'></textarea>
+  <view class='maxlenght'>30</view>
+</view>

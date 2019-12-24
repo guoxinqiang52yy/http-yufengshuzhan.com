@@ -1,0 +1,17 @@
+<!--pages/change_regoin/change_regoin.wxml-->
+<view class='homePage'>
+  <view class='regoin-title'>定位到的位置</view>
+  <view class='regoin-city' bindtap='changecity'>{{regoin}}</view>
+  <view class='regoin-title'>全部</view>
+  <block wx:for="{{city_list}}" wx:for-item="city_list">
+    <view class='more-regoin' hidden='{{cityhidden}}' data-id='{{city_list.id}}' bindtap='changecounty'
+     data-city='{{city_list.name}}'>   
+      {{city_list.name}}
+    </view>
+  </block>
+  <block wx:for="{{county_list}}" wx:for-item="county_list">
+    <view class='more-regoin' hidden='{{countyhidden}}' data-city='{{county_list.name}}' bindtap='changeregoin'>{{county_list.name}}</view>
+  </block>
+  
+  
+</view>

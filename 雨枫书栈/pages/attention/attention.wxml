@@ -1,0 +1,25 @@
+<!--pages/attention/attention.wxml-->
+<view class='homePage'>
+  <block wx:for='{{followlist}}'>
+    <view class='fans-attention'>
+      <view class='fans-attention-headview'>
+        <image class='fans-attention-headimg' src='{{item.img}}'></image>
+      </view>
+      <view class='fans-attention-data'>
+        <view class='data-nickname'>{{item.name}}</view>
+        <view class='data-sign'>{{item.des}}</view>
+      </view>
+      <block wx:if="{{item.follow}}">
+        <view class='attention-btn yes-attention' data-index='{{index}}' bindtap='cancelattention' data-id='{{item.id}}'>
+          已关注
+        </view>
+      </block>
+      <block wx:if="{{item.follow==false}}">
+        <view class='attention-btn yes-attention' data-index='{{index}}' bindtap='attention' data-id='{{item.id}}'>
+          关注
+        </view>
+      </block>
+    </view>
+  </block>
+  <view class='nomore'>没有更多啦~</view>
+</view>

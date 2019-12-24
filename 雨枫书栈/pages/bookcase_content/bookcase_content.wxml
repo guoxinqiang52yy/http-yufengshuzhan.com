@@ -1,0 +1,70 @@
+<!--pages/bookcase_content/bookcase_content.wxml-->
+<view class='homePage'>
+  <view class="searchBarContainer">
+    <view class="searchBar">
+      <image src='../../images/sousuo-dingwei2.png' class='didian_img'></image>
+      <text class='site_text'>{{currentCity}}</text>
+      <view class='text_place_holder text_place_holder_width'>
+        <input class="search-input input-width" placeholder='请输入书名/作者' placeholder-class='input-placeholder'
+        bindconfirm='searchSubmit' bindinput='changesearchvalue'>
+        </input>    
+        <image src='../../images/sousuo3.png' class='search_img' bindtap='searchSubmit'/>
+      </view>
+      <image src='../../images/saoma.png' class='saoma' bindtap='saoma'></image>
+    </view>
+  </view>
+  <view class='bookcase'>
+    <image src='{{bookcase_data.img}}' class='bookcase_img'></image>
+    <view class='bookcase_name'>{{bookcase_data.stack_name}}</view>
+    <view class='bookcase_canborrow'>
+      可借书籍共{{bookcase_data.count}}本
+      <cover-image src='../../images/borrow_return.png' class='bookcase_icon'></cover-image>  
+    </view>
+  </view>
+  <view class='go-here-view'>
+    <view class='go-here-left'>
+      <text class='go-here-left-text'>点击这里去还书</text>
+    </view>
+    <view class='go-here-address' bindtap='gohere'>
+      <image class='address-img' src='../../images/sousuo-dingwei3x.png'></image>
+      <view class='address-view'>{{bookcase_data.address}}</view>
+    </view>
+  </view>
+  <view class='book_type type_margin_top'>
+    <view class='book_type_view_left' bindtap='typehidden'>
+      <image src='../../images/fenlei.png' class='book_type_img'></image>
+      <view class='book_type_left_text'>分类</view>
+    </view>
+    <view class='book_type_view_right'>
+      <image src='../../images/tuijian2.png' class='book_type_img'></image>
+      <view class='book_type_right_text'>推荐</view>
+    </view>
+  </view>
+  <view class='type_hidden' hidden='{{typehidden}}'>
+    <view class='type'>
+      <block wx:for="{{typedata}}">
+          <view class='type_list' data-type_name='{{item.type_name}}' data-index='{{index}}' bindtap='tapborder'>
+            {{item.type_name}}
+            <block wx:if="!{{item.pitch_type}}">
+              <cover-view wx:if="{{item.pitch_type}}" class='zi_border'></cover-view>
+            </block>
+          </view>
+      </block>
+    </view>
+    <view class='rank'>
+      <block wx:for="{{paihang_type}}">
+        <view class='rank_type {{item.type_css}}' bindtap='chooserank' data-index='{{index}}' data-id='{{item.id}}'>
+          {{item.type_name}}
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class='book_list book_list_margin'>
+    <block wx:for='{{booklist}}'>
+      <view class='book_list_content' data-isbn='{{item.isbn}}' bindtap='openbookcontent'>
+        <image src='{{item.img}}' class='book_list_img'></image>
+        <view class='book_name'>《{{item.book_name}}》</view>
+      </view>
+    </block>
+  </view>
+</view>  

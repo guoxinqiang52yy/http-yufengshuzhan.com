@@ -1,0 +1,4 @@
+/* pages/mybookrack/mybookrack.wxss */
+page{
+  background: #fff;
+}

@@ -1,0 +1,56 @@
+/* pages/activity_comment/activity_comment.wxss */
+page{
+  background-color: #fff;
+}
+.btn-view{
+  height: 88rpx;
+  width: 710rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+.btn{
+  font-size: 36rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  color: #333;
+}
+.color-pur{
+  color: rgb(102, 88, 166) 
+}
+.textarea{
+  width: 710rpx;
+  height: 200rpx;
+  font-size: 28rpx;
+  color: #333;
+  margin: auto;
+}
+.img-view{
+  width: 710rpx;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.add-img{
+  width: 200rpx;
+  height: 200rpx;
+  background: #e5e5e5;
+  color: #aaaaaa;
+  line-height: 200rpx;
+  font-size: 120rpx;
+  text-align: center;
+}
+.comment-img{
+  width: 200rpx;
+  height: 200rpx;
+}
+.mar-left{
+  margin-left: 34rpx;
+}
+.mar-top{
+  margin-top:40rpx;
+}

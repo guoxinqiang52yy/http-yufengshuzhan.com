@@ -1,0 +1,33 @@
+<!--pages/get_userinfo/get_userinfo.wxml-->
+<!-- <view class='main'>
+  <image src='../../images/bookcaseicon.jpg' class='main-img'></image>
+  <button class='button' wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+  点击获取您的基本信息
+  </button>
+  <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class='button martop'>
+    点击获取您的手机号码
+  </button> 
+</view> -->
+<view class='bg'>
+  <image src='../../images/background3x.png' class='bg_img'></image>
+</view>
+
+<view class='head_icon'>
+  <image src='../../images/20190104160339.png' class='head_icon_img'></image>
+</view>
+<view class='getUserInfo'>
+  <button class='botton_text' wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+    使用微信登录
+  </button>
+</view>
+<view class='getPhone'>
+  <button class='botton_text' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+    点击获取手机号
+  </button>
+</view>
+<view class="book_content">
+  通过雨枫书栈小程序，用户可以自助借阅雨枫书栈图书，用户还可以通过雨枫书栈小程序参与或发起活动。
+</view>
+<view class='bottom_icon'>
+  <image src='../../images/rain3x.png' class='bottom_icon_img'></image>
+</view>

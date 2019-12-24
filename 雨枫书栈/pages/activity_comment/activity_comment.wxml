@@ -1,0 +1,14 @@
+<!--pages/activity_comment/activity_comment.wxml-->
+<view class='btn-view'>
+  <view class='btn' bindtap='cancelcomment'>取消</view>
+  <view class='btn color-pur' bindtap='publishcomment'>发表</view>
+</view>
+<textarea class='textarea' placeholder='这一刻的想法...' bindinput='changevalue'></textarea>
+<view class='img-view'>
+  <block wx:for="{{tempFiles}}">
+    <image class='comment-img {{item.mar_left}} {{item.mar_top}}' src='{{item.path}}' bindtap='previewImage'
+    data-current='{{item.path}}'></image>
+  </block>
+  <view class='add-img {{add_left}} {{add_top}}' bindtap='addimg' hidden='{{add_hidden}}'>+</view>
+</view>
+

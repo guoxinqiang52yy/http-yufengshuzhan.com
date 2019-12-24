@@ -1,0 +1,13 @@
+<!--pages/activity_collect/activity_collect.wxml-->
+<block wx:for='{{act_data}}'>
+  <view class='act-collect-view' bindtap='openactivity' data-id='{{item.id}}'>
+    <image src='{{item.img}}' class='collect-img'></image>
+    <block wx:if="{{item.admin==1}}">
+      <image class='official_icon' src='../../images/guanfang.png'></image>
+    </block>
+    <view class='collect-view'>
+      <view class='collect-text'>[{{item.name}}]</view>
+      <view class='collect-text'>[{{item.start_time}}]</view>
+    </view>
+  </view>
+</block>

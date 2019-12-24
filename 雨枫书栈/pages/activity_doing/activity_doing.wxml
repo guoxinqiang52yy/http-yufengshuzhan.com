@@ -1,0 +1,14 @@
+<!--pages/activity_doing/activity_doing.wxml-->
+<view class='act-th'>
+  <view class='act-th-title'>我参与的活动</view>
+  <view class='act-th-title'>状态</view>
+  <view class='act-th-title right-align'>时间</view>
+</view>
+<block wx:for='{{act_data}}'>
+  <view class='act-th' bindtap='openActivityContent' data-id='{{item.id}}'>
+    <view class='act-td-title'>【{{item.name}}】</view>
+    <view class='act-td-title act-td-color'>进行中</view>
+    <view class='act-td-title right-align act-td-color'>{{item.start_time}}</view>
+  </view>
+</block>
+

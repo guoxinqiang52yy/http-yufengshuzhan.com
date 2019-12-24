@@ -1,0 +1,29 @@
+/* pages/booklist_content/booklist_content.wxss */
+page{
+  height: 100%;
+}
+.page-hei{
+  height: 100%
+}
+.type_top_margin{
+  margin-top: -70rpx;
+}
+.no_view{
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+}
+.no-img{
+  padding-top: 340rpx;
+  margin: 0 auto;
+  display: block;
+  width: 300rpx;
+  height: 300rpx;
+}
+.no-text{
+  margin-top: 40rpx;
+  width: 100%;
+  text-align: center;
+  color: #666666;
+  font-size: 24rpx;
+}

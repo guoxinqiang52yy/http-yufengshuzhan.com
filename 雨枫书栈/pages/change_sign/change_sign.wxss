@@ -1,0 +1,15 @@
+/* pages/change_sign/change_sign.wxss */
+.sign-textarea{
+  margin-top: 20rpx;
+  height: 200rpx;
+  width: 100%;
+  font-size: 28rpx;
+  line-height: 30rpx;
+}
+.maxlenght{
+  color: #A1A1A1;
+  position: absolute;
+  top: 170rpx;
+  right: 20rpx;
+  font-size: 30rpx;
+}

@@ -1,0 +1,15 @@
+<!--pages/apply_result/apply_result.wxml-->
+<block wx:if="{{apply_result}}">
+  <image class='true-img' src='../../images/baomingchenggong3x.png'></image>
+  <view class='text'>报名成功!</view>
+  <view class='user-info-view'>
+    <view class='user-info'>姓名:{{apply_data.name}}</view>
+    <view class='user-info'>活动名称:【{{apply_data.act_name}}】</view>
+    <view class='user-info'>活动时间:<text class='info-text'>{{apply_data.time}}</text></view>
+    <view class='user-info'>活动地址:<text class='info-text'>{{apply_data.place}}</text></view>
+  </view>
+</block>
+<block wx:if="{{!apply_result}}">
+  <image src='../../images/baomingshibai3x.png' class='false-img'></image>
+  <view class='text'>很遗憾!报名失败，人数已满</view>
+</block>

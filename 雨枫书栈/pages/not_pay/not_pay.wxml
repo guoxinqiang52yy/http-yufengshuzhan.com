@@ -1,0 +1,19 @@
+<view class='affirm_bg'>
+  <view class='affirm_title'>支付订单</view>
+  <view class='affirm_info'>书名:{{name}}</view>
+  <view class='affirm_info'>价格:{{price}}</view>
+  <view class='affirm_info'>订单编号:{{order_number}}</view>
+  <view class='affirm_info'>时间:{{time}}</view>
+  <view class='btn-view'>
+    <view class='affirm-btn btn-color1' bindtap='cancel'>取消</view>
+    <view class='affirm-btn btn-color2' bindtap='affirmnotpay'>支付</view> 
+  </view>
+</view>
+<image src='../../images/20181211100330.png' class='affirm-img'></image>
+<view class='sign_in_ok_bg' hidden='{{balance_hidden}}'>
+  <view class='sign_in_tishi'>
+    <view class='pay-hidden' bindtap='payhidden'>X</view>
+    <input type='number' placeholder='请输入充值金额' class='input' bindinput='changebalance'></input>
+    <view class='balance-btn' bindtap='paybalance'>确认充值</view>
+  </view>
+</view>

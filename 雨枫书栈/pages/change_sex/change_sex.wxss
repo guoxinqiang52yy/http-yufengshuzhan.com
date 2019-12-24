@@ -1,0 +1,36 @@
+/* pages/change_sex/change_sex.wxss */
+.choose-sex{
+  margin-top: 20rpx;
+  height: 80rpx;
+  width: 710rpx;
+  padding: 0 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 80rpx;
+}
+.choose-sex-title{
+  color: #333333;
+  font-size: 30rpx;
+}
+.choose-radio{
+  width: 30rpx;
+  height: 30rpx;
+  border: 2rpx #66599E solid;
+  border-radius: 100%;
+  margin-right: 10rpx;
+}
+.sex-name{
+  margin-right: 10rpx;
+  font-size: 28rpx;
+  color: #666666;
+}
+.sex-group{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.sex-choosed{
+  background-color: #66599E;
+}

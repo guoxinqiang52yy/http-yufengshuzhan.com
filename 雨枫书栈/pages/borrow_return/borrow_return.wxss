@@ -1,0 +1,43 @@
+/* pages/borrow_return/borrow_return.wxss */
+.borrow_return{
+  width: 90%;
+  padding: 35rpx 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+.br_img_view{
+  width: 60rpx;
+  height: 60rpx;
+  padding: 15rpx;
+  background-color: #6C5FA9;
+  border-radius: 100%;
+}
+.br_img{
+  width: 100%;
+  height: 100%
+}
+.br_title{
+  width: 60%;
+  height: 75rpx;
+}
+.br_title_name{
+  width: 100%;
+  text-align: left;
+  font-size: 32rpx;
+  color: #333333;
+}
+.br_title_content{
+  margin-top: 10rpx;
+  width: 100%;
+  text-align: left;
+  font-size: 24rpx;
+  color: #666666;
+}
+.jinru_img{
+  width: 40rpx;
+  height: 40rpx;
+}

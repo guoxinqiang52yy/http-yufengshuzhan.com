@@ -1,0 +1,230 @@
+<!--pages/member/member.wxml-->
+<view class='homePage'>
+  <view class='myself'>
+    <image src='{{userData.img}}' class='head' bindtap='openmydata'></image> 
+    <view class='user_name'>
+      <view class='user_name_text' bindtap='openmydata'>{{userData.name}}</view>
+      <view class='user_other' wx:if="{{userData.is_vip==1}}" bindtap='openmydata'>
+        <image src='../../images/huiyuan3.png' class='member_img' >
+        </image>
+        <text class='user_num'>{{userData.mobile}}</text>
+        <block wx:if='{{userData.stack_gl==1}}'>
+          <image class='admin-icon' src='../../images/admin3.png'></image>
+        </block>
+        <cover-view class='user_level'>{{userData.user_level}}</cover-view>
+      </view>  
+      <view class='user_other' wx:else bindtap='openmydata'>
+        <image src='../../images/no_member.png' class='member_img' >
+        </image>
+        <text class='user_num'>{{userData.mobile}}</text>
+        <block wx:if='{{userData.stack_gl==1}}'>
+          <image class='admin-icon' src='../../images/admin3.png'></image>
+        </block>
+      </view>  
+      <view class='user_other margintop_fu'>
+        <text class='user_num user_num_color' bindtap='openfans' space="ensp">粉丝 {{userData.fan_num}}</text>
+        <text class='user_num user_num_marginleft user_num_color' bindtap='openattention' space="ensp">关注 {{userData.follow_num}}</text>
+      </view>
+    </view> 
+    <view class='go-mydata' bindtap='openmydata'>
+      <image class='go-mydata-img' src='../../images/qianwnag3.png'></image>
+    </view>
+  </view>
+  <view class='go_member' bindtap='openmembercontent'>
+    <image src='../../images/memberIcon3x.png' class='memberIcon'></image>
+    <view class='become_member'>加入会员</view>
+  </view>
+  <view class='member_view'>
+    <view class='member_view_title'>
+      <view class='member_view_title_name'>我发起的活动</view>
+      <view class='title_right' bindtap='openacthost'>
+        <view class='member_view_title_img'>
+          <text>发起</text>  
+        </view>
+        <image class='member_view_list_img' src='../../images/faqi3.png'></image>
+      </view>
+    </view>
+    <view class='member_content'>
+      <view class='member_content_view mem_width1' bindtap='openmydone'>
+        <image src='../../images/yiwancheng3.png' class='member_content_img'></image>
+        <view class='member_content_text'>已完成</view>
+      </view>
+      <view class='member_content_view mem_width1' bindtap='openmydoing'>
+        <image src='../../images/jinxingzhong3.png' class='member_content_img'></image>
+        <view class='member_content_text'>进行中</view>
+      </view>
+      <view class='member_content_view mem_width1' bindtap='openidnotcheck'>
+        <image src='../../images/daishenhe3.png' class='member_content_img'></image>
+        <view class='member_content_text'>待审核</view>
+      </view>
+      <view class='member_content_view mem_width1' bindtap='openmynotstart'>
+        <image src='../../images/weikaishi3.png' class='member_content_img'></image>
+        <view class='member_content_text'>未开始</view>
+      </view>
+      <view class='member_content_view mem_width1' bindtap='opennotpass'>
+        <image src='../../images/weitongguo3.png' class='member_content_img'></image>
+        <view class='member_content_text'>未通过</view>
+      </view>
+    </view>
+  </view>
+  <view class='top-padding'></view>
+  <view class='member_view'>
+    <view class='member_view_title'>
+      <view class='member_view_title_name'>我参与的活动</view>    
+    </view>
+    <view class='member_content'>
+      <view class='member_content_view mem_width2' bindtap='openactdone'>
+        <image src='../../images/yiwancheng23.png' class='member_content_img'></image>
+        <view class='member_content_text'>已完成</view>
+      </view>
+      <view class='member_content_view mem_width2' bindtap='openactdoing'>
+        <image src='../../images/jinxingzhong23.png' class='member_content_img'></image>
+        <view class='member_content_text'>进行中</view>
+      </view>
+      <view class='member_content_view mem_width2'bindtap='openactnotstart'>
+        <image src='../../images/weikaishi23.png' class='member_content_img'></image>
+        <view class='member_content_text'>未开始</view>
+      </view>
+      <view class='member_content_view mem_width2' bindtap='openactcollect'>
+        <image src='../../images/collectact.png' class='member_content_img'></image>
+        <view class='member_content_text'>已收藏</view>
+      </view>
+    </view>
+  </view>
+  <view class='top-padding'></view>
+  <view class='member_view'>
+    <view class='member_view_title'>
+      <view class='member_view_title_name'>我的书栈</view>    
+    </view>
+    <view class='member_content'>
+      <view class='member_content_view mem_width2'>
+        <image src='../../images/zaidu3x.png' class='member_content_img' bindtap='openmyborrow'></image>
+        <view class='member_content_text'>在读</view>
+      </view>
+      <view class='member_content_view mem_width2'>
+        <image src='../../images/yidu3x.png' class='member_content_img' bindtap='openmybookrack'></image>
+        <view class='member_content_text'>已读</view>
+      </view>
+      <view class='member_content_view mem_width2'>
+        <image src='../../images/goumai3x.png' class='member_content_img' bindtap='openmybuy'></image>
+        <view class='member_content_text'>购买</view>
+      </view>
+      <view class='member_content_view mem_width2' bindtap='openmybookcollect'>
+        <image src='../../images/huiyuan-soucang3x.png' class='member_content_img'></image>
+        <view class='member_content_text'>收藏</view>
+      </view>
+    </view>
+  </view>
+  <view class='member_view'>
+    <view class='member_view_title' bindtap='openmymessage'>
+      <view class='member_view_title_name'>我的消息</view>
+      <view class='title_right'>
+        <image class='member_view_list_img' src='../../images/xiaoxi3x.png'></image>
+        <image class='jinru_next' src='../../images/qianwnag3.png'></image>
+      </view>
+    </view>
+    <view class='member_view_title' bindtap='mywallet_true'>
+      <view class='member_view_title_name'>我的钱包</view>
+      <view class='title_right'>
+        <image class='jinru_next' src='../../images/qianwnag3.png'></image>
+      </view>
+    </view>
+    <view class='hidden_view' hidden='{{mywallethidden}}' id='mywallet'>
+      <view class='hidden_view_content'>
+        
+        <view class='hidden_view_content_hang' wx:if='{{userData.is_vip==0}}'>
+          <view class='my_about'>我的押金:<text class='my_about_num'>{{userData.deposit}}</text></view>
+          <view class='hidden_view_content_right'>
+            <view class='my_btn bg_color_hui' bindtap='payDeposit'>交押金</view>
+            <view class='my_btn bg_color_zi margin_left' bindtap='depositRefund'>退押金</view>
+          </view>
+        </view>
+        <view class='hidden_view_content_hang' wx:elif='{{userData.is_vip==1}}'>
+          <view class='my_about'>免押金</view>
+          <view class='hidden_view_content_right'>
+            <view class='my_btn bg_color_zi' bindtap='depositRefund'>退押金</view>
+            <view class='my_btn margin_left'></view>
+          </view>
+        </view>
+        
+        <view class='hidden_view_content_hang'>
+          <view class='my_about'>我的余额:<text class='my_about_num'>{{userData.balance}}</text></view>
+          <view class='hidden_view_content_right'>
+            <view class='my_btn bg_color_yellow' bindtap='balancehidden'>充值</view>
+            <view class='my_btn bg_color_zi margin_left' bindtap='mybalance'>详情</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- <view class='member_view_title' bindtap='mycollect_true'>
+      <view class='member_view_title_name'>我的收藏</view>
+      <view class='title_right'>
+        <image class='member_view_list_img' src='../../images/huodong-soucang.png'></image>
+        <image class='jinru_next' src='../../images/qianwnag3.png'></image>
+      </view>
+    </view>
+    <view class='hidden_view' hidden='{{collecthidden}}' id='my_read_id'>
+      <view class='hidden_view_content'>
+        <view class='collect_hang'>
+          <view class='collect_type'>我收藏的活动</view>
+          <view class='collect_type' bindtap='openmybookcollect'>我收藏的图书</view>
+        </view>
+      </view>
+    </view> -->
+    <view class='member_view_title' bindtap='myreadid_true'>
+      <view class='member_view_title_name'>我的阅读账号</view>
+      <view class='title_right'>
+        <image class='jinru_next' src='../../images/qianwnag3.png'></image>
+      </view>
+    </view>
+    <view class='hidden_view' hidden='{{myreadidhidden}}' id='my_read_id'>
+      <view class='hidden_view_content' bindtap='openreadmoney'>
+        <view class='readymoney_hang'>
+          <view class='money_left'>我的阅读币:<text class='my_about_num'>{{userData.user_integral}}</text></view>
+          <view class='money_right'>
+            查看详情
+            <image class='checkcontent' src='../../images/chakanxiangqing3.png'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <button class='member_view_title member_view_border' open-type='contact'>
+      <view class='member_view_title_name'>联系客服</view>
+      <view class='title_right'>
+        <image class='jinru_next' src='../../images/qianwnag3.png'></image>
+      </view>
+    </button>
+  </view>
+</view>
+<view class='sign_in_ok_bg' hidden='{{balance_hidden}}'>
+  <view class='sign_in_tishi'>
+    <view class='pay-hidden' bindtap='payhidden'>X</view>
+    <input type='number' placeholder='请输入充值金额' class='input' bindinput='changebalance'></input>
+    <view class='balance-btn' bindtap='paybalance'>确认充值</view>
+  </view>
+</view>
+<view class='tar-view'></view>
+<view class='tabBar'>
+  <navigator class='tabBar-nav' open-type='redirect' url='../home/home'>
+    <image class='tabBar-icon' src='../../images/shouyexianxing3x.png'></image>
+    <view class='tabBar-text'>首页</view>
+  </navigator>
+  <navigator class='tabBar-nav' open-type='redirect' url='../book_list/book_list'>
+    <image class='tabBar-icon' src='../../images/shudanxianxing3x.png'></image>
+    <view class='tabBar-text'>书单</view>
+  </navigator>
+  <navigator class='tabBar-br' open-type='redirect' url='../borrow_return/borrow_return'>
+    <view class='br-background'>
+      <image class='tabBar-icon br-icon-mar' src='../../images/jiehuan3x.png'></image>
+    </view>
+    <view class='tabBar-text br-text-mar'>借还</view>
+  </navigator>
+  <navigator class='tabBar-nav' open-type='redirect' url='../activity/activity'>
+    <image class='tabBar-icon' src='../../images/huodongxianxing3x.png'></image>
+    <view class='tabBar-text'>活动</view>
+  </navigator>
+  <navigator class='tabBar-nav'>
+    <image class='tabBar-icon' src='../../images/huiyuanjianying3x.png'></image>
+    <view class='tabBar-text'>会员</view>
+  </navigator>
+</view>

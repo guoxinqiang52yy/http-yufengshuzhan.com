@@ -1,0 +1,27 @@
+/* pages/change_regoin/change_regoin.wxss */
+.regoin-title{
+  height: 40rpx;
+  width: 710rpx;
+  padding: 0 20rpx;
+  color: #999999;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  background-color: #F2F2F2
+}
+.regoin-city{
+  height: 80rpx;
+  width: 710rpx;
+  padding: 0 20rpx;
+  color: #333333;
+  font-size: 30rpx;
+  line-height: 80rpx;
+}
+.more-regoin{
+  height: 60rpx;
+  width: 730rpx;
+  margin-left: 20rpx;
+  border-bottom: #CFCFCF 2rpx solid;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #666666;
+}

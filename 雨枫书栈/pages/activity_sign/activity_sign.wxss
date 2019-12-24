@@ -1,0 +1,30 @@
+/* pages/activity_sign/activity_sign.wxss */
+.sign-view{
+  padding: 0 20rpx;
+  width: 710rpx;
+  height: 80rpx;
+  background-color: #fff;
+  line-height: 80rpx;
+  border-bottom: #F2F2F2 20rpx solid;
+}
+.font-title{
+  font-size: 32rpx;
+  color: #333;
+}
+.text-marleft{
+  margin-left: 20rpx;
+}
+.font-detail{
+  font-size: 24rpx;
+  color: rgb(102, 102, 102);
+}
+.sign-btn{
+  width: 400rpx;
+  height: 80rpx;
+  margin: 120rpx auto;
+  background-color: rgb(102, 86, 166);
+  color: #fff;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  text-align: center;
+}

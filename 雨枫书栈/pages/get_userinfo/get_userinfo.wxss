@@ -1,0 +1,75 @@
+/* pages/get_userinfo/get_userinfo.wxss */
+page{
+  background: #fff;
+  height: 100%;
+}
+.bg{
+  width: 100%;
+  height: 100%;
+}
+.bg_img{
+  width: 100%;
+  height: 100%;
+}
+.head_icon{
+  width: 100%;
+  height: 182rpx;
+  position: absolute;
+  top: 100rpx;
+  display: flex;
+  justify-content: center;
+}
+.head_icon_img{
+  width: 156rpx;
+  height: 100%;
+}
+.bottom_icon{
+  width: 100%;
+  height: 158rpx;
+  position: absolute;
+  bottom: 320rpx;
+  display: flex;
+  justify-content: center;
+}
+.bottom_icon_img{
+  width: 280rpx;
+  height: 100%;
+}
+.getUserInfo{
+  width: 100%;
+  height: 60rpx;
+  position: absolute;
+  top: 400rpx;
+  display: flex;
+  justify-content: center;
+}
+.botton_text{
+  width: 400rpx;
+  height: 60rpx;
+  font-size: 28rpx;
+  line-height: 60rpx;
+  border-radius: 60rpx;
+  text-align: center;
+  padding: 0;
+  color: #6658A6;
+}
+.getPhone{
+  width: 100%;
+  height: 60rpx;
+  position: absolute;
+  top: 500rpx;
+  display: flex;
+  justify-content: center;
+}
+.book_content{
+  padding:0 8%;
+  box-sizing: border-box;
+  width: 100%;
+  position: absolute;
+  bottom: 120rpx;
+  display: flex;
+  justify-content: center;
+  font-size:28rpx;
+  line-height: 40rpx;
+  color: #6658A6
+}

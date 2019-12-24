@@ -1,0 +1,106 @@
+/* pages/activity_recommend/activity_recommend.wxss */
+page{
+  background-color: #fff;
+}
+/* 活动列表*/
+.act_list{
+  width: 100%;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.act_content{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+.act_content_img{
+  height: 160rpx;
+  width: 400rpx;
+  position: relative;
+}
+.act_img{
+  height: 160rpx;
+  width: 400rpx;
+  position: relative;
+}
+.official_icon{
+  height: 80rpx;
+  width: 80rpx;
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+}
+.act_text{
+  color: #B8B8B8;
+  font-size: 20rpx;
+  height: 22rpx;
+  line-height: 20rpx;
+  margin-top: 10rpx;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+}
+.act_view{
+  width: 180rpx;
+  margin-left: 10rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap; 
+}
+.act_name{
+  margin: auto;
+  width: 90%;
+  font-size: 28rpx;
+  line-height: 32rpx;
+}
+.act_data{
+  width:210rpx;
+}
+.hot_reader_h{
+  height: 390rpx;
+}
+.change_img{
+  width: 28rpx;
+  height: 28rpx;
+  margin-left: 10rpx;
+}
+.title{
+  display: flex;
+  justify-content: space-between;
+}
+.hot_book_title{
+  margin-left: 4rpx;
+  display: inline-flex;
+  background: #FFFFFF;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  border-left: 6rpx #6C5FA9 solid;
+  padding-left: 22rpx;
+  height: 28rpx;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+.more_view{
+  display: inline-flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  padding-right: 40rpx;
+  height: 24rpx;
+  line-height: 28rpx;
+  margin-top: 20rpx;
+  color: #666666;
+}
+.more_img{
+  height: 28rpx;
+  width: 14rpx;
+  margin-left: 10rpx;
+}
+.red-font{
+  color: #FF0000;
+  margin-left: 10rpx;
+}

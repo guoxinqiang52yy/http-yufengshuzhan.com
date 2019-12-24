@@ -1,0 +1,13 @@
+<!--pages/affirm_borrow/affirm_borrow.wxml-->
+<view class='affirm_bg'>
+  <view class='affirm_title'>借书</view>
+  <view class='affirm_info'>书名:{{name}}</view>
+  <view class='affirm_info'>价格:{{price}}</view>
+  <view class='affirm_info'>订单编号:{{back_order}}</view>
+  <view class='affirm_info'>时间:{{time}}</view>
+  <view class='btn-view'>
+    <view class='affirm-btn btn-color1' bindtap='cancel'>取消</view>
+    <view class='affirm-btn btn-color2' bindtap='affirmborrow'>确定</view> 
+  </view>
+</view>
+<image src='../../images/20181211100330.png' class='affirm-img'></image>

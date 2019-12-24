@@ -1,0 +1,5 @@
+<!--pages/become_member/become_member.wxml-->
+<view class='homePage bgcolor'>
+  <image class='become_icon' src='../../images/member3.png'></image>
+  <view class='become_text'>恭喜您！已成为尊贵的会员</view>
+</view>

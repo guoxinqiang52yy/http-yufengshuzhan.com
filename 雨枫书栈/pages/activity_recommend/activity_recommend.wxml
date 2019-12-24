@@ -1,0 +1,56 @@
+<!--pages/activity_recommend/activity_recommend.wxml-->
+<view class='homePage'>
+  <view class="searchBarContainer">
+    <view class="searchBar">
+      <image src='../../images/sousuo-dingwei3.png' class='didian_img'></image>
+      <text class='site_text'>{{currentCity}}</text>
+      <view class='text_place_holder text_place_holder_width'>
+        <input class="search-input input-width" placeholder='搜索精彩活动' placeholder-class='input-placeholder'
+        bindconfirm='searchSubmit' bindinput='changesearchvalue'>
+        </input>    
+        <image src='../../images/sousuo3.png' class='search_img' bindtap='searchSubmit'/>
+      </view>
+      <image src='../../images/saoma.png' class='saoma' bindtap='saoma'></image>
+    </view>
+  </view>
+  <view class='hot_book'>
+    <view class='title'>
+      <view class='hot_book_title'>活动推荐</view>
+    </view> 
+    <block wx:for="{{act_data}}">
+      <view class='act_list' bindtap='openactcontent' data-id='{{item.id}}'>
+        <view class='act_content'>
+          <view class='act_img'>
+            <image class='act_content_img' src='{{item.img}}'></image>
+            <block wx:if="{{item.admin==1}}">
+              <image class='official_icon' src='../../images/guanfang.png'></image>
+            </block>
+          </view>  
+          <view class='act_data'>
+            <view class='act_text'>
+              <image src='../../images/20181212110217.png' class='data_icon'></image>
+              <view class='act_view'>{{item.activity_price}}RMB</view>
+            </view>
+            <view class='act_text'>
+              <image src='../../images/20181212113939.png' class='data_icon'></image>
+              <view class='act_view'>{{item.start_time}}</view>
+            </view>
+            <view class='act_text'>
+              <image src='../../images/20181212114103.png' class='data_icon'></image>
+              <view class='act_view'>{{item.place}}</view>
+            </view>
+            <view class='act_text'>
+              <image src='../../images/20181212114018.png' class='data_icon'></image>
+              <view class='act_view'>{{item.initiator}}</view>
+            </view>
+            <view class='act_text'>
+              <image src='../../images/20181212114045.png' class='data_icon'></image>
+              <text class='red-font'>{{item.num}}</text>/{{item.count}}
+            </view>
+          </view>
+        </view>
+        <view class='act_name'>{{item.name}}</view> 
+      </view>  
+    </block>  
+  </view>
+</view>  

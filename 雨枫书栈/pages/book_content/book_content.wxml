@@ -1,0 +1,59 @@
+<!--pages/book_content/book_content.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class='homePage'>
+  <view class='book_img_view'>
+    <image class='book_img' src='{{book_detail.img}}'></image>
+  </view>
+  <view class='top-padding'></view>
+  <view class='content_view'>
+    <view class='content_title'>{{book_detail.book_name}}</view>
+    <!-- <view class='content_detile'></view> -->
+  </view>
+  <view class='top-padding'></view>
+  <view class='content_view'>
+    <view class='content_detile detail_flex border_zi'>
+      <view class='text_width author_flex'>
+        <view>作</view><view>品</view><view>名</view><view>称</view>
+      </view>
+      <view class='name_font'>{{book_detail.book_name}}</view>
+    </view>
+    <view class='content_detile detail_flex detail_marleft'>
+      <view class='text_width author_flex'>
+        <view>作</view><view>者</view>
+      </view>
+      <view class='name_font'>{{book_detail.author}}</view>
+    </view>
+    <!-- <view class='content_detile' >首版时间 <text class='name_font'>2013年</text></view> -->
+  </view>
+  <view class='top-padding'></view>
+  <view class='content_view'>
+    <view class='content_title'>内容简介</view>
+    <view class='content_detile'>
+      <template is="wxParse" data="{{wxParseData:detail.nodes}}"/>
+    </view>
+    <!-- <view class='content_title margin_top'>作者简介</view>
+    <view class='content_detile'>1111111111111111111111111111111111111111111111111111111111111111111111111111111</view> -->
+  </view>
+  <!-- <view class='top-padding'></view> -->
+  <!-- <view class='content_view'>
+    <view class='content_title'>序</view>
+    <view class='content_detile'>1111111111111111111111111111111111111111111111111111111111111111111111111111111</view>
+  </view> -->
+  <view class='foot'></view>
+  <view class='bottom_btn'>
+    <button class='btn1' open-type="share">
+      <image class='btn_icon' src='../../images/fenxiang2.png'></image>
+      <view class='btn_text'>分享</view>
+    </button>
+    <view class='btn1' wx:if="{{collect}}">
+      <image class='btn_icon' src='../../images/shoucang_start.png' bindtap='cancelcollect'></image>
+      <view class='btn_text' bindtap='cancelcollect'>收藏</view>
+    </view>
+    <view class='btn1' wx:else>
+      <image class='btn_icon' src='../../images/huodong-soucang2.png' bindtap='collectType'></image>
+      <view class='btn_text' bindtap='collectType'>收藏</view>
+    </view>
+    <view class='btn2 bgcolor_yellow' bindtap='borrowbook'>借书</view>
+    <view class='btn2 bgcolor_zi' bindtap='buybook'>买书</view>
+  </view>
+</view>

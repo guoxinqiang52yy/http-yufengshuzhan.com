@@ -1,0 +1,208 @@
+/* pages/activity/activity.wxss */
+page{
+  background-color: #FFFFFF;
+}
+.swiper{
+  width: 100%;
+  height: 348rpx
+}
+.swiper-item{
+  height: 348rpx
+}
+.slide-image{
+  width: 100%;
+  height: 348rpx;
+}
+/* 活动类别 */
+.act-type{
+  width: 710rpx;
+  padding: 0 20rpx;
+  height: 68rpx;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  white-space: nowrap;
+}
+.margin-left{
+  margin-left: 30rpx;
+}
+.act-type-view{
+  color: #333;
+  font-size: 28rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  display:inline-block;
+}
+.act-type-icon{
+  margin-left: 6rpx;
+  width: 26rpx;
+  height: 14rpx;
+}
+/* 紫色字 */
+.color-purple{
+  color: #6658a6;
+}
+.type-border-buttom{
+  border-bottom: #CECCCC 2rpx solid;
+}
+/* 导航按钮*/
+.route-view{
+  width: 566rpx;
+  height: 154rpx;
+  padding: 0 92rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.route-icon-view{
+  width: 80rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.route-icon{
+  height: 60rpx;
+  width: 60rpx;
+}
+.view-width{
+  width: 114rpx;
+}
+.icon-view-hei-wid{
+  width: 80rpx;
+  height: 80rpx;
+}
+.icon-text{
+  margin-top: 20rpx;
+  text-align: center;
+  font-size: 24rpx;
+  height: 24rpx;
+  line-height: 24rpx;
+  color:#333;
+}
+.text-font{
+  font-size: 28rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+}
+/* 活动列表*/
+.act_list{
+  width: 100%;
+  margin-top: 10rpx;
+  margin-bottom: 20rpx;
+}
+.act_content{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+.act_content_img{
+  height: 160rpx;
+  width: 400rpx;
+}
+.act_img{
+  height: 160rpx;
+  width: 400rpx;
+  position: relative;
+}
+.official_icon{
+  height: 80rpx;
+  width: 80rpx;
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  z-index: 1000;
+}
+.act_text{
+  color: #B8B8B8;
+  font-size: 20rpx;
+  height: 22rpx;
+  line-height: 20rpx;
+  margin-top: 12rpx;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+}
+.act_view{
+  width: 180rpx;
+  margin-left: 10rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap; 
+}
+.act_name{
+  margin:auto;
+  width: 90%;
+  font-size: 28rpx;
+  line-height: 32rpx;
+}
+.act_data{
+  width:230rpx;
+}
+.hot_reader_h{
+  height: 390rpx;
+}
+.change_img{
+  width: 28rpx;
+  height: 28rpx;
+  margin-left: 10rpx;
+}
+.title{
+  display: flex;
+  justify-content: space-between;
+}
+.hot_book_title{
+  margin-left: 4rpx;
+  display: inline-flex;
+  background: #FFFFFF;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  border-left: 6rpx #6C5FA9 solid;
+  padding-left: 22rpx;
+  height: 28rpx;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+.more_view{
+  display: inline-flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  padding-right: 40rpx;
+  height: 24rpx;
+  line-height: 28rpx;
+  margin-top: 20rpx;
+  color: #666666;
+}
+.more_img{
+  height: 28rpx;
+  width: 14rpx;
+  margin-left: 10rpx;
+}
+/*点击出现下拉选择*/
+.more-choose{
+  width: 100%;
+  position: absolute;
+  top: 580rpx;
+  left: 0rpx;
+  background-color: #FFFFFF;
+  z-index: 1001;
+}
+.more-view{
+  height: 48rpx;
+  width: 730rpx;
+  padding-left: 20rpx;
+  color: #666;
+  font-size: 20rpx;
+  line-height: 48rpx;
+}
+.red-font{
+  color: #FF0000;
+  margin-left: 10rpx;
+}

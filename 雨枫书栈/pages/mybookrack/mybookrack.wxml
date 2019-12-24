@@ -1,0 +1,11 @@
+<!--pages/mybookrack/mybookrack.wxml-->
+<view class='homePage'>
+  <view class='book_list'>
+    <block wx:for='{{bookrack}}'>
+      <view class='book_list_content' bindtap='openbookcontent' data-isbn='{{item.isbn}}'>
+        <image src='{{item.img}}' class='book_list_img'></image>
+        <view class='book_name'>《{{item.book_name}}》</view>
+      </view>
+    </block>
+  </view>
+</view>

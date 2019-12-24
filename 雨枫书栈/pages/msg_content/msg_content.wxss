@@ -1,0 +1,30 @@
+/* pages/msg_content/msg_content.wxss */
+page{
+  background-color: #F2F2F2;
+}
+.page_bgcolor{
+  background-color: #F2F2F2;
+}
+.msg_time{
+  width: 140rpx;
+  height: 28rpx;
+  background-color: #CCCCCC;
+  color: #333333;
+  text-align: center;
+  line-height: 28rpx;
+  font-size: 20rpx;
+  margin: 40rpx auto;
+  border-radius:14rpx; 
+}
+.msg_content{
+  margin: auto;
+  height: 320rpx;
+  width: 630rpx;
+  padding: 40rpx 20rpx;
+  background-color: #fff;
+  border-radius: 12rpx;
+  color: #333333;
+  font-size: 24rpx;
+  line-height: 24rpx;
+  word-break:break-all; 
+}

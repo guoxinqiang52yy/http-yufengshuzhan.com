@@ -1,0 +1,24 @@
+<!--pages/booklist_content/booklist_content.wxml-->
+<view class="searchBarContainer">
+  <view class="searchBar">
+    <view class='text_place_holder'>
+      <input class="search-input" placeholder='请输入书名/作者' placeholder-class='input-placeholder' confirm-type="search" bindconfirm="searchSubmit" bindinput='changesearchvalue' value='{{value}}'>
+      </input>   
+      <image src='../../images/sousuo3.png' class='search_img' bindtap='searchSubmit'/>
+    </view>
+    <image src='../../images/saoma.png' class='saoma' bindtap='saoma'></image>
+  </view>
+</view>
+<image src='../../images/20180911093214.png' class='type_top'></image>
+<view class='book_list type_top_margin'>
+  <block wx:for='{{content}}'>
+    <view class='book_list_content' bindtap='openbooklist' data-isbn='{{item.isbn}}'>
+      <image src='{{item.img}}' class='book_list_img'></image>
+      <view class='book_name'>《{{item.book_name}}》</view>
+    </view>
+  </block>
+</view>
+<view class='no_view' hidden='{{no_hidden}}'>
+  <image src='../../images/wu3x.png' class='no-img'></image>
+  <view class='no-text'>对不起没有搜索到你要找的书。</view>
+</view>

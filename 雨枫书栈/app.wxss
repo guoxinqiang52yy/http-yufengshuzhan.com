@@ -1,0 +1,437 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.top-padding{
+  height: 4rpx;
+  width: 100%;
+  background-color: #F2F2F2;
+}
+page{
+  height: 100%;
+}
+.homePage {
+    background: #FFFFFF;
+    width: 100%;
+}
+.searchBarContainer {
+    width: 100%;
+    height: 90rpx;
+    background:#F2F2F2;
+    margin-top: 0px;
+    top: 0px;
+    overflow: hidden;
+}
+
+
+.searchBar{
+  height: 60rpx;
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  display: flex;
+  overflow: hidden;
+  flex-flow: row;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+}
+/* .search{
+  height: 60rpx;
+  width: 590rpx;
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  color: #999999;
+  letter-spacing: 0;
+  background: #f4f4f4;
+  border-radius: 16px;
+} */
+.text_place_holder {
+  height: 60rpx;
+  width: 590rpx;
+  line-height: 60rpx;
+  font-family: PingFangSC-Regular;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+  letter-spacing: 0;
+  background: #CCCCCC;
+  border-radius: 16px;
+}
+.search-input{
+  width: 530rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #999999;
+}
+.input-width{
+  width: 390rpx;
+}
+.text_place_holder_width{
+  width: 450rpx;
+}
+.search_img{
+  height: 50rpx;
+  width: 50rpx;
+}
+.saoma{
+  height: 48rpx;
+  width: 48rpx;
+}
+.input-placeholder{
+  font-size: 26rpx;
+}
+.didian_img{
+  width: 44rpx;
+  height: 44rpx;
+}
+.site_text{
+  color: #000;
+  font-size: 32rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  width: 100rpx;
+}
+/* 书单列表类公用样式 */
+.book_list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  width: 750rpx;
+  background: #fff;
+}
+.book_list_content{
+  margin-top: 10rpx;
+  width: 210rpx;
+  margin-left: 30rpx;
+}
+.book_list_img{
+  width: 210rpx;
+  height: 280rpx;
+}
+.book_name{
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+/* 附近书栈列表公用样式 */
+.bookcase_list{
+  padding: 20rpx 0; 
+  margin:auto;
+  width:750rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.bookcase_img{
+  height: 128rpx;
+  width: 100rpx;
+}
+.bookcase_content{
+  width: 500rpx;
+  height: 128rpx;
+}
+.bookcase_name{
+  width: 100%;
+  height: 24rpx;
+  text-align: left;
+  font-size: 24rpx;
+}
+.bookcase_address{
+  width: 100%;
+  height: 20rpx;
+  text-align: left;
+  font-size: 20rpx;
+  color: #666666;
+  margin-top: 40rpx;
+  line-height: 20rpx;
+}
+.jinru{
+  position: relative;
+  top: 6rpx;
+  right: -342rpx;
+  height: 20rpx;
+  width: 20rpx;
+}
+.bookcase_other{
+  width: 500rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: start;
+  height: 20rpx;
+}
+.other_list{
+  width: 130rpx;
+  text-align: left;
+  font-size: 20rpx;
+  color: #666666;
+  margin-top: 20rpx;
+  line-height: 20rpx;
+}
+.data_icon{
+  width: 20rpx;
+  height: 20rpx;
+}
+/* 底部border */
+.border-bottom{
+  border-bottom: 2rpx #CCCCCC solid;
+}
+/* 书分类 */
+.book_type{
+ width: 100%;
+ height: 30rpx;
+ padding-top: 10rpx;
+ display: flex;
+ flex-direction: row;
+ flex-wrap: nowrap;
+ justify-content: space-between;
+ margin-top: -60rpx;
+ align-items: center;
+}
+.book_type_view_left{
+  width: 30%;
+  margin-left: 10rpx;
+  text-align: left;
+  height: 28rpx;
+  line-height: 28rpx;
+  display: flex;
+  flex-direction:row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center; 
+}
+.book_type_view_right{
+  width: 30%;
+  margin-right:10rpx;
+  text-align: right;
+  height: 24rpx;
+  line-height: 24rpx;
+  display: flex;
+  flex-direction:row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center; 
+}
+.book_type_img{
+  width: 28rpx;
+  height: 36rpx;
+}
+.book_type_left_text{
+  font-size: 28rpx;
+  color: #333333;
+  margin: 0 0 0 6rpx;
+}
+.book_type_right_text{
+  font-size: 24rpx;
+  color: #666666;
+  margin-left: 6rpx
+}
+.type_top{
+  width: 100%;
+  height: 76rpx;
+}
+/* 图书分类 隐藏/显示 */
+.type_hidden{
+  background-color: #F2F2F2;
+  width: 100%;
+}
+.type{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 20rpx;
+}
+.type_list{
+  margin: 20rpx 0;
+  width: 106rpx;
+  height: 24rpx;
+  font-size: 24rpx;
+  color: #333333;
+  text-align: center;
+}
+.rank{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.rank_type{
+  width: 374rpx;
+  background-color: #fff;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #333333;
+}
+/*粉丝和关注页面公用样式*/
+page{
+  background-color: #F2F2F2;
+}
+.fans-attention{
+  height: 100rpx;
+  width: 100%;
+  border-bottom:2rpx #DBDBDB solid; 
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.fans-attention-headview{
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 100%;
+}
+.fans-attention-headimg{
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 100%;
+}
+.fans-attention-data{
+  width: 460rpx;
+  height: 80rpx;
+  color: #333333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.data-nickname{
+  color: #333333;
+  font-size: 30rpx;
+}
+.attention-btn{
+  width: 100rpx;
+  height: 40rpx;
+  font-size: 20rpx;
+  line-height: 40rpx;
+  border-radius: 24rpx;
+  text-align: center;
+}
+.yes-attention{
+  color: #8F8F8F;
+  border: 2rpx #8F8F8F solid;
+}
+.no-attention{
+  color: #6558A7;
+  border: 2rpx #6558A7 solid;
+}
+.nomore{
+  color: #666666;
+  padding-top: 40rpx;
+  height: 24rpx;
+  width: 100%;
+  text-align: center;
+  font-size: 24rpx;
+  line-height: 24rpx;
+  background-color: #F2F2F2;
+}
+/*活动进度列表*/
+.act-th{
+  margin-top: 20rpx;
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+}
+.act-th-title{
+  width: 30%;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 36rpx;
+  text-align: center;
+  color: #333;
+}
+.right-align{
+  text-align: right!important;
+}
+.act-td-title{
+   width: 30%;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  text-align: center;
+  color: #333;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.act-td-color{
+  color: #666;
+}
+/*底部导航*/
+.tabBar{
+  height: 98rpx;
+  width: 670rpx;
+  padding: 0 40rpx;
+  position: fixed;
+  bottom:0;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9999;
+}
+.tabBar-icon{
+  width: 54rpx;
+  height: 54rpx;
+}
+.tabBar-text{
+  width: 100%;
+  height: 20rpx;
+  font-size: 20rpx;
+  color: rgb(102, 102, 102);
+  text-align: center;
+  line-height: 20rpx;
+}
+.tabBar-br{
+  width: 120rpx;
+  height: 200rpx;
+}
+.br-background{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 100%;
+  background-color: rgb(102, 88, 166);
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.br-icon-mar{
+  margin: auto;
+  display: block;
+}
+.br-text-mar{
+  margin-top: 2rpx;
+}
+.tar-view{
+  height: 140rpx;
+  background-color: #F2F2F2
+}

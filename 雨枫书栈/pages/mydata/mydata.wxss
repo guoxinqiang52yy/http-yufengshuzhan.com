@@ -1,0 +1,40 @@
+/* pages/mydata/mydata.wxss */
+.data-list{
+  padding: 30rpx 0;
+  width:90%;
+  border-bottom: 2rpx #D4D4D4 solid; 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+.data-title{
+  color: #333333;
+  font-size: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  width: 160rpx;
+}
+.data-head-view{
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 100%;
+  background-color: #CCCCCC;
+}
+.data-head{
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 100%;
+}
+.data-content{
+  color: #666666;
+  font-size: 24rpx;
+  height: 30rpx;
+  width: 480rpx;
+  line-height: 30rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  text-align: right;
+}

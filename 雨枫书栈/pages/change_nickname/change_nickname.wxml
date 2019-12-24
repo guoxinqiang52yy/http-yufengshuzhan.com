@@ -1,0 +1,4 @@
+<!--pages/change_nickname/change_nickname.wxml-->
+<view class='homePage'>
+  <input type='text' class='nickname-input' value='{{nickname}}' placeholder='请输入昵称' bindinput='changename'></input>
+</view>

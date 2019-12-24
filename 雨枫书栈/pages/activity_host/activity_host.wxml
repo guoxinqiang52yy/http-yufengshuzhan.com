@@ -1,0 +1,8 @@
+<!--pages/activity_host/activity_host.wxml-->
+<image class='main-img' src='../../images/faqihuodong3x.png'></image>
+<view class='main'>
+  <text selectable='true'>
+    请在浏览器中输入地址https://{{act_url}}使用小程序扫码进入后台
+  </text> 
+</view>
+<view class='hint'>长按上方链接复制至电脑浏览器</view>

@@ -1,0 +1,13 @@
+<!--pages/mybook_collect/mybook_collect.wxml-->
+<view class='homePage'>
+  <block wx:for='{{collect}}'>
+    <view class='borrow_list' bindtap='openbookcontent' data-isbn='{{item.isbn}}'>
+      <image src='{{item.img}}' class='borrow_img'></image>
+      <view class='borrow_content'>
+        <view class='b_book_name'>{{item.book_name}}</view>
+        <view class='b_borrow_some'>收藏时间：{{item.add_time}}</view>
+        <!-- <view class='b_borrow_some'>借书书栈：</view> -->
+      </view>
+    </view>
+  </block>
+</view>
